@@ -20,6 +20,18 @@ class BasicSocket
   def read_nonblock(len, str=T.unsafe(nil), exception: T.unsafe(nil)); end
 end
 
+class Benchmark::Job
+  def initialize(width); end
+end
+
+class Benchmark::Report
+  def initialize(width=T.unsafe(nil), format=T.unsafe(nil)); end
+end
+
+class Benchmark::Tms
+  def to_a(); end
+end
+
 class BigDecimal
   def clone(); end
   EXCEPTION_NaN = ::T.let(nil, ::T.untyped)
@@ -2724,6 +2736,10 @@ end
 
 CodeRay::Styles::Style::PLUGIN_HOST = CodeRay::Styles
 
+class Date::Infinity
+  def initialize(d=T.unsafe(nil)); end
+end
+
 class DidYouMean::ClassNameChecker
   def class_name(); end
 
@@ -2832,6 +2848,11 @@ class ERB
   def def_method(mod, methodname, fname=T.unsafe(nil)); end
 
   def def_module(methodname=T.unsafe(nil)); end
+end
+
+class ERB::Compiler::Scanner
+  DEFAULT_ETAGS = ::T.let(nil, ::T.untyped)
+  DEFAULT_STAGS = ::T.let(nil, ::T.untyped)
 end
 
 class Encoding
@@ -3000,6 +3021,19 @@ class FalseClass
   include ::JSON::Ext::Generator::GeneratorMethods::FalseClass
 end
 
+class Fiber
+  def transfer(*arg); end
+end
+
+class Fiber
+  def self.current(); end
+end
+
+class File
+  RELATIVE_PARENTDIR = ::T.let(nil, ::T.untyped)
+  RELATIVE_SAMEDIR = ::T.let(nil, ::T.untyped)
+end
+
 class File
   def self.exists?(arg); end
 end
@@ -3084,6 +3118,8 @@ module Gem
   RubyGemsVersion = ::T.let(nil, ::T.untyped)
   USE_BUNDLER_FOR_GEMDEPS = ::T.let(nil, ::T.untyped)
 end
+
+Gem::Cache = Gem::SourceIndex
 
 class Gem::DependencyInstaller
   def _deprecated_add_found_dependencies(to_do, dependency_list); end
@@ -3774,6 +3810,22 @@ class KeyError
   include ::DidYouMean::Correctable
 end
 
+class Logger
+  SEV_LABEL = ::T.let(nil, ::T.untyped)
+end
+
+class Logger::Formatter
+  Format = ::T.let(nil, ::T.untyped)
+end
+
+class Logger::LogDevice
+  include ::MonitorMixin
+end
+
+module Logger::Period
+  SiD = ::T.let(nil, ::T.untyped)
+end
+
 module MethodSource
   VERSION = ::T.let(nil, ::T.untyped)
 end
@@ -3781,6 +3833,26 @@ end
 module MethodSource::CodeHelpers::IncompleteExpression
   GENERIC_REGEXPS = ::T.let(nil, ::T.untyped)
   RBX_ONLY_REGEXPS = ::T.let(nil, ::T.untyped)
+end
+
+module MiniMagick::Configuration
+  CLI_DETECTION = ::T.let(nil, ::T.untyped)
+end
+
+class MiniMagick::Image::Info
+  ASCII_ENCODED_EXIF_KEYS = ::T.let(nil, ::T.untyped)
+end
+
+class MiniMagick::Tool
+  CREATION_OPERATORS = ::T.let(nil, ::T.untyped)
+end
+
+module MiniMagick::VERSION
+  MAJOR = ::T.let(nil, ::T.untyped)
+  MINOR = ::T.let(nil, ::T.untyped)
+  PRE = ::T.let(nil, ::T.untyped)
+  STRING = ::T.let(nil, ::T.untyped)
+  TINY = ::T.let(nil, ::T.untyped)
 end
 
 class Monitor
@@ -3823,6 +3895,8 @@ class Object
   ARGV = ::T.let(nil, ::T.untyped)
   CROSS_COMPILING = ::T.let(nil, ::T.untyped)
   ENV = ::T.let(nil, ::T.untyped)
+  RUBY18 = ::T.let(nil, ::T.untyped)
+  RUBY19 = ::T.let(nil, ::T.untyped)
   RUBY_COPYRIGHT = ::T.let(nil, ::T.untyped)
   RUBY_DESCRIPTION = ::T.let(nil, ::T.untyped)
   RUBY_ENGINE = ::T.let(nil, ::T.untyped)
@@ -3836,6 +3910,128 @@ class Object
   STDIN = ::T.let(nil, ::T.untyped)
   STDOUT = ::T.let(nil, ::T.untyped)
   TOPLEVEL_BINDING = ::T.let(nil, ::T.untyped)
+end
+
+class OpenURI::Buffer
+  def <<(str); end
+
+  def io(); end
+
+  def size(); end
+  StringMax = ::T.let(nil, ::T.untyped)
+end
+
+class OpenURI::Buffer
+end
+
+class OpenURI::HTTPError
+  def initialize(message, io); end
+end
+
+class OpenURI::HTTPRedirect
+  def initialize(message, io, uri); end
+end
+
+module OpenURI::Meta
+  def content_type_parse(); end
+
+  def meta_add_field(name, value); end
+
+  def meta_add_field2(name, values); end
+
+  def meta_setup_encoding(); end
+  RE_LWS = ::T.let(nil, ::T.untyped)
+  RE_PARAMETERS = ::T.let(nil, ::T.untyped)
+  RE_QUOTED_STRING = ::T.let(nil, ::T.untyped)
+  RE_TOKEN = ::T.let(nil, ::T.untyped)
+end
+
+module OpenURI::Meta
+  def self.init(obj, src=T.unsafe(nil)); end
+end
+
+module OpenURI
+  def self.check_options(options); end
+
+  def self.open_http(buf, target, proxy, options); end
+
+  def self.open_loop(uri, options); end
+
+  def self.open_uri(name, *rest); end
+
+  def self.redirectable?(uri1, uri2); end
+
+  def self.scan_open_optional_arguments(*rest); end
+end
+
+ParseError = Racc::ParseError
+
+module Parser
+  MESSAGES = ::T.let(nil, ::T.untyped)
+  VERSION = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Context
+  FLAGS = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Diagnostic
+  LEVELS = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Lexer
+  ESCAPES = ::T.let(nil, ::T.untyped)
+  KEYWORDS = ::T.let(nil, ::T.untyped)
+  KEYWORDS_BEGIN = ::T.let(nil, ::T.untyped)
+  LEX_STATES = ::T.let(nil, ::T.untyped)
+  PUNCTUATION = ::T.let(nil, ::T.untyped)
+  PUNCTUATION_BEGIN = ::T.let(nil, ::T.untyped)
+  REGEXP_META_CHARACTERS = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Lexer::Dedenter
+  TAB_WIDTH = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Lexer::Literal
+  DELIMITERS = ::T.let(nil, ::T.untyped)
+  TYPES = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::MaxNumparamStack
+  ORDINARY_PARAMS = ::T.let(nil, ::T.untyped)
+end
+
+module Parser::Meta
+  NODE_TYPES = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Rewriter
+  DEPRECATION_WARNING = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Source::Buffer
+  ENCODING_RE = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Source::Comment::Associator
+  MAGIC_COMMENT_RE = ::T.let(nil, ::T.untyped)
+  POSTFIX_TYPES = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Source::Rewriter
+  DEPRECATION_WARNING = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::Source::TreeRewriter
+  ACTIONS = ::T.let(nil, ::T.untyped)
+  DEPRECATION_WARNING = ::T.let(nil, ::T.untyped)
+  POLICY_TO_LEVEL = ::T.let(nil, ::T.untyped)
+end
+
+class Parser::StaticEnvironment
+  ANONYMOUS_BLOCKARG = ::T.let(nil, ::T.untyped)
+  FORWARD_ARGS = ::T.let(nil, ::T.untyped)
 end
 
 class Proc
@@ -3957,6 +4153,143 @@ class Pry::Slop::Option
   DEFAULT_OPTIONS = ::T.let(nil, ::T.untyped)
 end
 
+module RBI
+  VERSION = ::T.let(nil, ::T.untyped)
+end
+
+class RBI::ASTVisitor
+  extend ::T::Sig
+  extend ::T::Private::Abstract::Hooks
+  extend ::T::InterfaceWrapper::Helpers
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::File
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::Formatter
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::Group::Kind
+  Attrs = ::T.let(nil, ::T.untyped)
+  Consts = ::T.let(nil, ::T.untyped)
+  Helpers = ::T.let(nil, ::T.untyped)
+  Inits = ::T.let(nil, ::T.untyped)
+  Methods = ::T.let(nil, ::T.untyped)
+  MixesInClassMethods = ::T.let(nil, ::T.untyped)
+  Mixins = ::T.let(nil, ::T.untyped)
+  RequiredAncestors = ::T.let(nil, ::T.untyped)
+  Sends = ::T.let(nil, ::T.untyped)
+  SingletonClasses = ::T.let(nil, ::T.untyped)
+  TEnums = ::T.let(nil, ::T.untyped)
+  TStructFields = ::T.let(nil, ::T.untyped)
+  TypeMembers = ::T.let(nil, ::T.untyped)
+end
+
+module RBI::Indexable
+  extend ::T::Sig
+  extend ::T::Private::Abstract::Hooks
+  extend ::T::InterfaceWrapper::Helpers
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::Loc
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::Node
+  extend ::T::Sig
+  extend ::T::Private::Abstract::Hooks
+  extend ::T::InterfaceWrapper::Helpers
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::ParseError
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::Parser
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::Rewriters::Merge::Conflict
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::Rewriters::Merge::Keep
+  LEFT = ::T.let(nil, ::T.untyped)
+  NONE = ::T.let(nil, ::T.untyped)
+  RIGHT = ::T.let(nil, ::T.untyped)
+end
+
+class RBI::Rewriters::Merge
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::Rewriters::RemoveKnownDefinitions::Operation
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::UnexpectedParserError
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class RBI::Visitor
+  extend ::T::Sig
+  extend ::T::Private::Abstract::Hooks
+  extend ::T::InterfaceWrapper::Helpers
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Racc
+  Racc_No_Extensions = ::T.let(nil, ::T.untyped)
+end
+
+class Racc::CparseParams
+end
+
+class Racc::CparseParams
+end
+
+class Racc::Parser
+  Racc_Main_Parsing_Routine = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Core_Id_C = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Core_Revision = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Core_Revision_C = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Core_Revision_R = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Core_Version = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Core_Version_C = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Core_Version_R = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Revision = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Type = ::T.let(nil, ::T.untyped)
+  Racc_Runtime_Version = ::T.let(nil, ::T.untyped)
+  Racc_YY_Parse_Method = ::T.let(nil, ::T.untyped)
+end
+
 class Random
   def self.bytes(arg); end
 end
@@ -3975,6 +4308,536 @@ module RbConfig
   def self.fire_update!(key, val, mkconf=T.unsafe(nil), conf=T.unsafe(nil)); end
 
   def self.ruby(); end
+end
+
+class Ripper
+  def column(); end
+
+  def encoding(); end
+
+  def end_seen?(); end
+
+  def error?(); end
+
+  def filename(); end
+
+  def initialize(*arg); end
+
+  def lineno(); end
+
+  def parse(); end
+
+  def state(); end
+
+  def yydebug(); end
+
+  def yydebug=(yydebug); end
+  EXPR_ARG = ::T.let(nil, ::T.untyped)
+  EXPR_ARG_ANY = ::T.let(nil, ::T.untyped)
+  EXPR_BEG = ::T.let(nil, ::T.untyped)
+  EXPR_BEG_ANY = ::T.let(nil, ::T.untyped)
+  EXPR_CLASS = ::T.let(nil, ::T.untyped)
+  EXPR_CMDARG = ::T.let(nil, ::T.untyped)
+  EXPR_DOT = ::T.let(nil, ::T.untyped)
+  EXPR_END = ::T.let(nil, ::T.untyped)
+  EXPR_ENDARG = ::T.let(nil, ::T.untyped)
+  EXPR_ENDFN = ::T.let(nil, ::T.untyped)
+  EXPR_END_ANY = ::T.let(nil, ::T.untyped)
+  EXPR_FITEM = ::T.let(nil, ::T.untyped)
+  EXPR_FNAME = ::T.let(nil, ::T.untyped)
+  EXPR_LABEL = ::T.let(nil, ::T.untyped)
+  EXPR_LABELED = ::T.let(nil, ::T.untyped)
+  EXPR_MID = ::T.let(nil, ::T.untyped)
+  EXPR_NONE = ::T.let(nil, ::T.untyped)
+  EXPR_VALUE = ::T.let(nil, ::T.untyped)
+  PARSER_EVENT_TABLE = ::T.let(nil, ::T.untyped)
+  SCANNER_EVENT_TABLE = ::T.let(nil, ::T.untyped)
+  Version = ::T.let(nil, ::T.untyped)
+end
+
+class Ripper::Filter
+  def initialize(src, filename=T.unsafe(nil), lineno=T.unsafe(nil)); end
+end
+
+class Ripper::Lexer
+  def lex(); end
+
+  def tokenize(); end
+end
+
+class Ripper::Lexer::Elem
+  def event(); end
+
+  def event=(_); end
+
+  def initialize(pos, event, tok, state); end
+
+  def pos(); end
+
+  def pos=(_); end
+
+  def state(); end
+
+  def state=(_); end
+
+  def tok(); end
+
+  def tok=(_); end
+end
+
+class Ripper::Lexer::Elem
+  def self.[](*arg); end
+
+  def self.members(); end
+end
+
+class Ripper::Lexer::State
+  def &(i); end
+
+  def ==(i); end
+
+  def allbits?(i); end
+
+  def anybits?(i); end
+
+  def initialize(i); end
+
+  def nobits?(i); end
+
+  def to_i(); end
+
+  def to_int(); end
+
+  def to_int=(_); end
+
+  def to_s=(_); end
+
+  def |(i); end
+end
+
+class Ripper::Lexer::State
+  def self.[](*arg); end
+
+  def self.members(); end
+end
+
+class Ripper::Lexer
+end
+
+class Ripper::SexpBuilder
+  def on_BEGIN(*args); end
+
+  def on_CHAR(tok); end
+
+  def on_END(*args); end
+
+  def on___end__(tok); end
+
+  def on_alias(*args); end
+
+  def on_alias_error(*args); end
+
+  def on_aref(*args); end
+
+  def on_aref_field(*args); end
+
+  def on_arg_ambiguous(*args); end
+
+  def on_arg_paren(*args); end
+
+  def on_args_add(*args); end
+
+  def on_args_add_block(*args); end
+
+  def on_args_add_star(*args); end
+
+  def on_args_new(*args); end
+
+  def on_array(*args); end
+
+  def on_assign(*args); end
+
+  def on_assign_error(*args); end
+
+  def on_assoc_new(*args); end
+
+  def on_assoc_splat(*args); end
+
+  def on_assoclist_from_args(*args); end
+
+  def on_backref(tok); end
+
+  def on_backtick(tok); end
+
+  def on_bare_assoc_hash(*args); end
+
+  def on_begin(*args); end
+
+  def on_binary(*args); end
+
+  def on_block_var(*args); end
+
+  def on_blockarg(*args); end
+
+  def on_bodystmt(*args); end
+
+  def on_brace_block(*args); end
+
+  def on_break(*args); end
+
+  def on_call(*args); end
+
+  def on_case(*args); end
+
+  def on_class(*args); end
+
+  def on_class_name_error(*args); end
+
+  def on_comma(tok); end
+
+  def on_command(*args); end
+
+  def on_command_call(*args); end
+
+  def on_comment(tok); end
+
+  def on_const(tok); end
+
+  def on_const_path_field(*args); end
+
+  def on_const_path_ref(*args); end
+
+  def on_const_ref(*args); end
+
+  def on_cvar(tok); end
+
+  def on_def(*args); end
+
+  def on_defined(*args); end
+
+  def on_defs(*args); end
+
+  def on_do_block(*args); end
+
+  def on_dot2(*args); end
+
+  def on_dot3(*args); end
+
+  def on_dyna_symbol(*args); end
+
+  def on_else(*args); end
+
+  def on_elsif(*args); end
+
+  def on_embdoc(tok); end
+
+  def on_embdoc_beg(tok); end
+
+  def on_embdoc_end(tok); end
+
+  def on_embexpr_beg(tok); end
+
+  def on_embexpr_end(tok); end
+
+  def on_embvar(tok); end
+
+  def on_ensure(*args); end
+
+  def on_excessed_comma(*args); end
+
+  def on_fcall(*args); end
+
+  def on_field(*args); end
+
+  def on_float(tok); end
+
+  def on_for(*args); end
+
+  def on_gvar(tok); end
+
+  def on_hash(*args); end
+
+  def on_heredoc_beg(tok); end
+
+  def on_heredoc_end(tok); end
+
+  def on_ident(tok); end
+
+  def on_if(*args); end
+
+  def on_if_mod(*args); end
+
+  def on_ifop(*args); end
+
+  def on_ignored_nl(tok); end
+
+  def on_ignored_sp(tok); end
+
+  def on_imaginary(tok); end
+
+  def on_int(tok); end
+
+  def on_ivar(tok); end
+
+  def on_kw(tok); end
+
+  def on_kwrest_param(*args); end
+
+  def on_label(tok); end
+
+  def on_label_end(tok); end
+
+  def on_lambda(*args); end
+
+  def on_lbrace(tok); end
+
+  def on_lbracket(tok); end
+
+  def on_lparen(tok); end
+
+  def on_magic_comment(*args); end
+
+  def on_massign(*args); end
+
+  def on_method_add_arg(*args); end
+
+  def on_method_add_block(*args); end
+
+  def on_mlhs_add(*args); end
+
+  def on_mlhs_add_post(*args); end
+
+  def on_mlhs_add_star(*args); end
+
+  def on_mlhs_new(*args); end
+
+  def on_mlhs_paren(*args); end
+
+  def on_module(*args); end
+
+  def on_mrhs_add(*args); end
+
+  def on_mrhs_add_star(*args); end
+
+  def on_mrhs_new(*args); end
+
+  def on_mrhs_new_from_args(*args); end
+
+  def on_next(*args); end
+
+  def on_nl(tok); end
+
+  def on_op(tok); end
+
+  def on_opassign(*args); end
+
+  def on_operator_ambiguous(*args); end
+
+  def on_param_error(*args); end
+
+  def on_params(*args); end
+
+  def on_paren(*args); end
+
+  def on_parse_error(*args); end
+
+  def on_period(tok); end
+
+  def on_program(*args); end
+
+  def on_qsymbols_add(*args); end
+
+  def on_qsymbols_beg(tok); end
+
+  def on_qsymbols_new(*args); end
+
+  def on_qwords_add(*args); end
+
+  def on_qwords_beg(tok); end
+
+  def on_qwords_new(*args); end
+
+  def on_rational(tok); end
+
+  def on_rbrace(tok); end
+
+  def on_rbracket(tok); end
+
+  def on_redo(*args); end
+
+  def on_regexp_add(*args); end
+
+  def on_regexp_beg(tok); end
+
+  def on_regexp_end(tok); end
+
+  def on_regexp_literal(*args); end
+
+  def on_regexp_new(*args); end
+
+  def on_rescue(*args); end
+
+  def on_rescue_mod(*args); end
+
+  def on_rest_param(*args); end
+
+  def on_retry(*args); end
+
+  def on_return(*args); end
+
+  def on_return0(*args); end
+
+  def on_rparen(tok); end
+
+  def on_sclass(*args); end
+
+  def on_semicolon(tok); end
+
+  def on_sp(tok); end
+
+  def on_stmts_add(*args); end
+
+  def on_stmts_new(*args); end
+
+  def on_string_add(*args); end
+
+  def on_string_concat(*args); end
+
+  def on_string_content(*args); end
+
+  def on_string_dvar(*args); end
+
+  def on_string_embexpr(*args); end
+
+  def on_string_literal(*args); end
+
+  def on_super(*args); end
+
+  def on_symbeg(tok); end
+
+  def on_symbol(*args); end
+
+  def on_symbol_literal(*args); end
+
+  def on_symbols_add(*args); end
+
+  def on_symbols_beg(tok); end
+
+  def on_symbols_new(*args); end
+
+  def on_tlambda(tok); end
+
+  def on_tlambeg(tok); end
+
+  def on_top_const_field(*args); end
+
+  def on_top_const_ref(*args); end
+
+  def on_tstring_beg(tok); end
+
+  def on_tstring_content(tok); end
+
+  def on_tstring_end(tok); end
+
+  def on_unary(*args); end
+
+  def on_undef(*args); end
+
+  def on_unless(*args); end
+
+  def on_unless_mod(*args); end
+
+  def on_until(*args); end
+
+  def on_until_mod(*args); end
+
+  def on_var_alias(*args); end
+
+  def on_var_field(*args); end
+
+  def on_var_ref(*args); end
+
+  def on_vcall(*args); end
+
+  def on_void_stmt(*args); end
+
+  def on_when(*args); end
+
+  def on_while(*args); end
+
+  def on_while_mod(*args); end
+
+  def on_word_add(*args); end
+
+  def on_word_new(*args); end
+
+  def on_words_add(*args); end
+
+  def on_words_beg(tok); end
+
+  def on_words_new(*args); end
+
+  def on_words_sep(tok); end
+
+  def on_xstring_add(*args); end
+
+  def on_xstring_literal(*args); end
+
+  def on_xstring_new(*args); end
+
+  def on_yield(*args); end
+
+  def on_yield0(*args); end
+
+  def on_zsuper(*args); end
+end
+
+class Ripper::TokenPattern
+  def initialize(pattern); end
+
+  def match(str); end
+
+  def match_list(tokens); end
+  MAP = ::T.let(nil, ::T.untyped)
+end
+
+class Ripper::TokenPattern::CompileError
+end
+
+class Ripper::TokenPattern::CompileError
+end
+
+class Ripper::TokenPattern::Error
+end
+
+class Ripper::TokenPattern::Error
+end
+
+class Ripper::TokenPattern::MatchData
+  def initialize(tokens, match); end
+
+  def string(n=T.unsafe(nil)); end
+end
+
+class Ripper::TokenPattern::MatchData
+end
+
+class Ripper::TokenPattern::MatchError
+end
+
+class Ripper::TokenPattern::MatchError
+end
+
+class Ripper::TokenPattern
+  def self.compile(*arg); end
+end
+
+class Ripper
+  def self.dedent_string(arg, arg1); end
+
+  def self.lex_state_name(arg); end
+
+  def self.token_match(src, pattern); end
 end
 
 class RubyVM::AbstractSyntaxTree::Node
@@ -4017,6 +4880,327 @@ class Set
   InspectKey = ::T.let(nil, ::T.untyped)
 end
 
+module Spoom
+  SPOOM_PATH = ::T.let(nil, ::T.untyped)
+  VERSION = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::Cli::Bump
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::Cli::Coverage
+  DATA_DIR = ::T.let(nil, ::T.untyped)
+end
+
+module Spoom::Cli::Helper
+  HIGHLIGHT_COLOR = ::T.let(nil, ::T.untyped)
+end
+
+module Spoom::Cli::Helper
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::Cli::Main
+  extend ::T::Sig
+end
+
+class Spoom::Cli::Run
+  DEFAULT_FORMAT = ::T.let(nil, ::T.untyped)
+  SORT_CODE = ::T.let(nil, ::T.untyped)
+  SORT_ENUM = ::T.let(nil, ::T.untyped)
+  SORT_LOC = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::Color
+  BLACK = ::T.let(nil, ::T.untyped)
+  BLUE = ::T.let(nil, ::T.untyped)
+  BOLD = ::T.let(nil, ::T.untyped)
+  CLEAR = ::T.let(nil, ::T.untyped)
+  CYAN = ::T.let(nil, ::T.untyped)
+  GREEN = ::T.let(nil, ::T.untyped)
+  LIGHT_BLACK = ::T.let(nil, ::T.untyped)
+  LIGHT_BLUE = ::T.let(nil, ::T.untyped)
+  LIGHT_CYAN = ::T.let(nil, ::T.untyped)
+  LIGHT_GREEN = ::T.let(nil, ::T.untyped)
+  LIGHT_MAGENTA = ::T.let(nil, ::T.untyped)
+  LIGHT_RED = ::T.let(nil, ::T.untyped)
+  LIGHT_WHITE = ::T.let(nil, ::T.untyped)
+  LIGHT_YELLOW = ::T.let(nil, ::T.untyped)
+  MAGENTA = ::T.let(nil, ::T.untyped)
+  RED = ::T.let(nil, ::T.untyped)
+  WHITE = ::T.let(nil, ::T.untyped)
+  YELLOW = ::T.let(nil, ::T.untyped)
+end
+
+module Spoom::Colorize
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::Coverage::Cards::Card
+  TEMPLATE = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::Coverage::Cards::Snapshot
+  TEMPLATE = ::T.let(nil, ::T.untyped)
+end
+
+module Spoom::Coverage::D3
+  COLOR_FALSE = ::T.let(nil, ::T.untyped)
+  COLOR_IGNORE = ::T.let(nil, ::T.untyped)
+  COLOR_STRICT = ::T.let(nil, ::T.untyped)
+  COLOR_STRONG = ::T.let(nil, ::T.untyped)
+  COLOR_TRUE = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::Coverage::D3::Base
+  extend ::T::Sig
+  extend ::T::Private::Abstract::Hooks
+  extend ::T::InterfaceWrapper::Helpers
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::Coverage::D3
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::Coverage::Page
+  TEMPLATE = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::Coverage::Snapshot
+  STRICTNESSES = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::Coverage::Snapshot
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::Coverage::Template
+  extend ::T::Sig
+  extend ::T::Private::Abstract::Hooks
+  extend ::T::InterfaceWrapper::Helpers
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::Coverage
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::FileTree::Node
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::FileTree
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::Git
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::Client
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::Diagnostic
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::DocumentSymbol
+  SYMBOL_KINDS = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::LSP::DocumentSymbol
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::Error::Diagnostics
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::Hover
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::Location
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::Message
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::Position
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::LSP::PrintableSymbol
+  extend ::T::Sig
+  extend ::T::Private::Abstract::Hooks
+  extend ::T::InterfaceWrapper::Helpers
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::Range
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::ResponseError
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::LSP::SignatureHelp
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::Printer
+  extend ::T::Sig
+  extend ::T::Private::Abstract::Hooks
+  extend ::T::InterfaceWrapper::Helpers
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::Sorbet
+  BIN_PATH = ::T.let(nil, ::T.untyped)
+  CONFIG_PATH = ::T.let(nil, ::T.untyped)
+  GEM_PATH = ::T.let(nil, ::T.untyped)
+  SEGFAULT_CODE = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::Sorbet::Config
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::Sorbet::Errors
+  DEFAULT_ERROR_URL_BASE = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::Sorbet::Errors::Error
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::Sorbet::Errors::Parser
+  HEADER = ::T.let(nil, ::T.untyped)
+end
+
+class Spoom::Sorbet::Errors::Parser
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::Sorbet::Errors
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::Sorbet::MetricsParser
+  DEFAULT_PREFIX = ::T.let(nil, ::T.untyped)
+end
+
+module Spoom::Sorbet::MetricsParser
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::Sorbet::Sigils
+  SIGIL_REGEXP = ::T.let(nil, ::T.untyped)
+  STRICTNESS_FALSE = ::T.let(nil, ::T.untyped)
+  STRICTNESS_IGNORE = ::T.let(nil, ::T.untyped)
+  STRICTNESS_INTERNAL = ::T.let(nil, ::T.untyped)
+  STRICTNESS_STRICT = ::T.let(nil, ::T.untyped)
+  STRICTNESS_STRONG = ::T.let(nil, ::T.untyped)
+  STRICTNESS_TRUE = ::T.let(nil, ::T.untyped)
+  VALID_STRICTNESS = ::T.let(nil, ::T.untyped)
+end
+
+module Spoom::Sorbet::Sigils
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom::Sorbet
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Spoom::Timeline
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module Spoom
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Sprinkles::Opts::GetOpt::Option
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Sprinkles::Opts::GetOpt
+  extend ::T::Sig
+  extend ::T::Private::Abstract::Hooks
+  extend ::T::InterfaceWrapper::Helpers
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
 class String
   include ::JSON::Ext::Generator::GeneratorMethods::String
   def shellescape(); end
@@ -4041,6 +5225,28 @@ Struct::Group = Etc::Group
 Struct::Passwd = Etc::Passwd
 
 Struct::Tms = Process::Tms
+
+module Tapioca
+  BINARY_FILE = ::T.let(nil, ::T.untyped)
+  DEFAULT_DSL_DIR = ::T.let(nil, ::T.untyped)
+  DEFAULT_GEM_DIR = ::T.let(nil, ::T.untyped)
+  DEFAULT_OVERRIDES = ::T.let(nil, ::T.untyped)
+  DEFAULT_POSTREQUIRE_FILE = ::T.let(nil, ::T.untyped)
+  DEFAULT_RBI_DIR = ::T.let(nil, ::T.untyped)
+  DEFAULT_SHIM_DIR = ::T.let(nil, ::T.untyped)
+  DEFAULT_TODO_FILE = ::T.let(nil, ::T.untyped)
+  SORBET_CONFIG_FILE = ::T.let(nil, ::T.untyped)
+  SORBET_DIR = ::T.let(nil, ::T.untyped)
+  TAPIOCA_CONFIG_FILE = ::T.let(nil, ::T.untyped)
+  TAPIOCA_DIR = ::T.let(nil, ::T.untyped)
+  VERSION = ::T.let(nil, ::T.untyped)
+end
+
+module Tapioca
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
 
 class Tempfile
   def _close(); end
@@ -4074,6 +5280,10 @@ module URI
 end
 
 class URI::FTP
+  def buffer_open(buf, proxy, options); end
+end
+
+class URI::FTP
   def self.new2(user, password, host, port, path, typecode=T.unsafe(nil), arg_check=T.unsafe(nil)); end
 end
 
@@ -4087,6 +5297,10 @@ class URI::File
   def set_userinfo(v); end
   COMPONENT = ::T.let(nil, ::T.untyped)
   DEFAULT_PORT = ::T.let(nil, ::T.untyped)
+end
+
+class URI::HTTP
+  def buffer_open(buf, proxy, options); end
 end
 
 class URI::LDAP
@@ -4161,3 +5375,3740 @@ module Warning
   extend ::Warning
 end
 
+module YARD
+  CONFIG_DIR = ::T.let(nil, ::T.untyped)
+  ROOT = ::T.let(nil, ::T.untyped)
+  TEMPLATE_ROOT = ::T.let(nil, ::T.untyped)
+  VERSION = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::CLI::CommandParser
+  def run(*args); end
+end
+
+class YARD::CLI::CommandParser
+  def self.commands(); end
+
+  def self.commands=(commands); end
+
+  def self.default_command(); end
+
+  def self.default_command=(default_command); end
+
+  def self.run(*args); end
+end
+
+class YARD::CLI::Config
+  def append(); end
+
+  def append=(append); end
+
+  def as_list(); end
+
+  def as_list=(as_list); end
+
+  def gem_install_cmd(); end
+
+  def gem_install_cmd=(gem_install_cmd); end
+
+  def key(); end
+
+  def key=(key); end
+
+  def reset(); end
+
+  def reset=(reset); end
+
+  def run(*args); end
+
+  def values(); end
+
+  def values=(values); end
+end
+
+class YARD::CLI::Config
+end
+
+class YARD::CLI::Diff
+  def run(*args); end
+end
+
+class YARD::CLI::Diff
+end
+
+class YARD::CLI::Display
+  def format_objects(); end
+
+  def initialize(*args); end
+
+  def wrap_layout(contents); end
+end
+
+class YARD::CLI::Display
+end
+
+class YARD::CLI::Gems
+  def run(*args); end
+end
+
+class YARD::CLI::Gems
+end
+
+class YARD::CLI::Graph
+  def objects(); end
+
+  def options(); end
+
+  def run(*args); end
+end
+
+class YARD::CLI::Graph
+end
+
+class YARD::CLI::Help
+  def run(*args); end
+end
+
+class YARD::CLI::Help
+end
+
+class YARD::CLI::I18n
+end
+
+class YARD::CLI::I18n
+end
+
+class YARD::CLI::List
+  def run(*args); end
+end
+
+class YARD::CLI::List
+end
+
+class YARD::CLI::MarkupTypes
+  def run(*args); end
+end
+
+class YARD::CLI::MarkupTypes
+end
+
+class YARD::CLI::Server
+  def adapter(); end
+
+  def adapter=(adapter); end
+
+  def libraries(); end
+
+  def libraries=(libraries); end
+
+  def options(); end
+
+  def options=(options); end
+
+  def run(*args); end
+
+  def scripts(); end
+
+  def scripts=(scripts); end
+
+  def server_options(); end
+
+  def server_options=(server_options); end
+
+  def template_paths(); end
+
+  def template_paths=(template_paths); end
+end
+
+class YARD::CLI::Server
+end
+
+class YARD::CLI::Stats
+  include ::YARD::Templates::Helpers::BaseHelper
+  def initialize(parse=T.unsafe(nil)); end
+
+  def output(name, data, undoc=T.unsafe(nil)); end
+
+  def parse(); end
+
+  def parse=(parse); end
+
+  def print_statistics(); end
+
+  def print_undocumented_objects(); end
+
+  def stats_for_attributes(); end
+
+  def stats_for_classes(); end
+
+  def stats_for_constants(); end
+
+  def stats_for_files(); end
+
+  def stats_for_methods(); end
+
+  def stats_for_modules(); end
+  STATS_ORDER = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::CLI::Stats
+end
+
+class YARD::CLI::YRI
+  def cache_object(name, path); end
+
+  def find_object(name); end
+
+  def print_object(object); end
+
+  def print_usage(); end
+
+  def run(*args); end
+  CACHE_FILE = ::T.let(nil, ::T.untyped)
+  DEFAULT_SEARCH_PATHS = ::T.let(nil, ::T.untyped)
+  SEARCH_PATHS_FILE = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::CLI::YRI
+end
+
+class YARD::CLI::YardoptsCommand
+  DEFAULT_YARDOPTS_FILE = ::T.let(nil, ::T.untyped)
+end
+
+module YARD::CodeObjects
+  BUILTIN_ALL = ::T.let(nil, ::T.untyped)
+  BUILTIN_CLASSES = ::T.let(nil, ::T.untyped)
+  BUILTIN_EXCEPTIONS = ::T.let(nil, ::T.untyped)
+  BUILTIN_EXCEPTIONS_HASH = ::T.let(nil, ::T.untyped)
+  BUILTIN_MODULES = ::T.let(nil, ::T.untyped)
+  CONSTANTMATCH = ::T.let(nil, ::T.untyped)
+  CONSTANTSTART = ::T.let(nil, ::T.untyped)
+  CSEP = ::T.let(nil, ::T.untyped)
+  CSEPQ = ::T.let(nil, ::T.untyped)
+  ISEP = ::T.let(nil, ::T.untyped)
+  ISEPQ = ::T.let(nil, ::T.untyped)
+  METHODMATCH = ::T.let(nil, ::T.untyped)
+  METHODNAMEMATCH = ::T.let(nil, ::T.untyped)
+  NAMESPACEMATCH = ::T.let(nil, ::T.untyped)
+  NSEP = ::T.let(nil, ::T.untyped)
+  NSEPQ = ::T.let(nil, ::T.untyped)
+  PROXY_MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::CodeObjects::Base
+  def ==(other); end
+
+  def [](key); end
+
+  def []=(key, value); end
+
+  def add_file(file, line=T.unsafe(nil), has_comments=T.unsafe(nil)); end
+
+  def add_tag(*tags); end
+
+  def base_docstring(); end
+
+  def copy_to(other); end
+
+  def copyable_attributes(); end
+
+  def docstring(locale=T.unsafe(nil)); end
+
+  def docstring=(comments); end
+
+  def dynamic(); end
+
+  def dynamic=(dynamic); end
+
+  def dynamic?(); end
+
+  def eql?(other); end
+
+  def equal?(other); end
+
+  def file(); end
+
+  def files(); end
+
+  def format(options=T.unsafe(nil)); end
+
+  def group(); end
+
+  def group=(group); end
+
+  def has_tag?(name); end
+
+  def line(); end
+
+  def method_missing(meth, *args, &block); end
+
+  def name(prefix=T.unsafe(nil)); end
+
+  def namespace(); end
+
+  def namespace=(obj); end
+
+  def parent(); end
+
+  def parent=(obj); end
+
+  def path(); end
+
+  def relative_path(other); end
+
+  def root?(); end
+
+  def sep(); end
+
+  def signature(); end
+
+  def signature=(signature); end
+
+  def source(); end
+
+  def source=(statement); end
+
+  def source_type(); end
+
+  def source_type=(source_type); end
+
+  def tag(name); end
+
+  def tags(name=T.unsafe(nil)); end
+
+  def title(); end
+
+  def to_ary(); end
+
+  def type(); end
+
+  def visibility(); end
+
+  def visibility=(v); end
+end
+
+class YARD::CodeObjects::Base
+  def self.===(other); end
+
+  def self.new(namespace, name, *args, &block); end
+end
+
+class YARD::CodeObjects::ClassObject
+  def inheritance_tree(include_mods=T.unsafe(nil)); end
+
+  def inherited_constants(); end
+
+  def inherited_meths(opts=T.unsafe(nil)); end
+
+  def is_exception?(); end
+
+  def superclass(); end
+
+  def superclass=(object); end
+end
+
+class YARD::CodeObjects::ClassVariableObject
+  def value(); end
+
+  def value=(value); end
+end
+
+class YARD::CodeObjects::ClassVariableObject
+end
+
+class YARD::CodeObjects::CodeObjectList
+  def <<(value); end
+
+  def initialize(owner=T.unsafe(nil)); end
+
+  def push(value); end
+end
+
+class YARD::CodeObjects::CodeObjectList
+end
+
+class YARD::CodeObjects::ConstantObject
+  def value(); end
+
+  def value=(value); end
+end
+
+class YARD::CodeObjects::ExtendedMethodObject
+  def initialize(obj); end
+
+  def method_missing(sym, *args, &block); end
+
+  def scope(); end
+end
+
+class YARD::CodeObjects::ExtendedMethodObject
+end
+
+class YARD::CodeObjects::ExtraFileObject
+  def ==(other); end
+
+  def attributes(); end
+
+  def attributes=(attributes); end
+
+  def contents(); end
+
+  def contents=(contents); end
+
+  def eql?(other); end
+
+  def equal?(other); end
+
+  def filename(); end
+
+  def filename=(filename); end
+
+  def initialize(filename, contents=T.unsafe(nil)); end
+
+  def locale(); end
+
+  def locale=(locale); end
+
+  def name(); end
+
+  def name=(name); end
+
+  def path(); end
+
+  def title(); end
+
+  def type(); end
+end
+
+class YARD::CodeObjects::ExtraFileObject
+end
+
+class YARD::CodeObjects::MacroObject
+  def attached?(); end
+
+  def expand(call_params=T.unsafe(nil), full_source=T.unsafe(nil), block_source=T.unsafe(nil)); end
+
+  def macro_data(); end
+
+  def macro_data=(macro_data); end
+
+  def method_object(); end
+
+  def method_object=(method_object); end
+  MACRO_MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::CodeObjects::MacroObject
+  def self.apply(docstring, call_params=T.unsafe(nil), full_source=T.unsafe(nil), block_source=T.unsafe(nil), _method_object=T.unsafe(nil)); end
+
+  def self.apply_macro(macro, docstring, call_params=T.unsafe(nil), full_source=T.unsafe(nil), block_source=T.unsafe(nil)); end
+
+  def self.create(macro_name, data, method_object=T.unsafe(nil)); end
+
+  def self.create_docstring(macro_name, data, method_object=T.unsafe(nil)); end
+
+  def self.expand(macro_data, call_params=T.unsafe(nil), full_source=T.unsafe(nil), block_source=T.unsafe(nil)); end
+
+  def self.find(macro_name); end
+
+  def self.find_or_create(macro_name, data, method_object=T.unsafe(nil)); end
+end
+
+class YARD::CodeObjects::MethodObject
+  def aliases(); end
+
+  def attr_info(); end
+
+  def constructor?(); end
+
+  def explicit(); end
+
+  def explicit=(explicit); end
+
+  def initialize(namespace, name, scope=T.unsafe(nil), &block); end
+
+  def is_alias?(); end
+
+  def is_attribute?(); end
+
+  def is_explicit?(); end
+
+  def module_function?(); end
+
+  def overridden_method(); end
+
+  def parameters(); end
+
+  def parameters=(parameters); end
+
+  def reader?(); end
+
+  def scope(); end
+
+  def scope=(v); end
+
+  def writer?(); end
+end
+
+class YARD::CodeObjects::MethodObject
+end
+
+class YARD::CodeObjects::ModuleObject
+  def inheritance_tree(include_mods=T.unsafe(nil)); end
+end
+
+class YARD::CodeObjects::ModuleObject
+end
+
+module YARD::CodeObjects::NamespaceMapper
+  def clear_separators(); end
+
+  def default_separator(value=T.unsafe(nil)); end
+
+  def register_separator(sep, *valid_types); end
+
+  def separators(); end
+
+  def separators_for_type(type); end
+
+  def separators_match(); end
+
+  def types_for_separator(sep); end
+
+  def unregister_separator_by_type(type); end
+end
+
+module YARD::CodeObjects::NamespaceMapper
+  def self.default_separator(); end
+
+  def self.default_separator=(default_separator); end
+
+  def self.invalidate(); end
+
+  def self.map(); end
+
+  def self.map_match(); end
+
+  def self.on_invalidate(&block); end
+
+  def self.rev_map(); end
+end
+
+class YARD::CodeObjects::NamespaceObject
+  def aliases(); end
+
+  def attributes(); end
+
+  def child(opts=T.unsafe(nil)); end
+
+  def children(); end
+
+  def class_attributes(); end
+
+  def class_mixins(); end
+
+  def constants(opts=T.unsafe(nil)); end
+
+  def cvars(); end
+
+  def groups(); end
+
+  def groups=(groups); end
+
+  def included_constants(); end
+
+  def included_meths(opts=T.unsafe(nil)); end
+
+  def initialize(namespace, name, *args, &block); end
+
+  def instance_attributes(); end
+
+  def instance_mixins(); end
+
+  def meths(opts=T.unsafe(nil)); end
+end
+
+class YARD::CodeObjects::Proxy
+  def ==(other); end
+
+  def ===(other); end
+
+  def equal?(other); end
+
+  def instance_of?(klass); end
+
+  def is_a?(klass); end
+
+  def kind_of?(klass); end
+
+  def method_missing(meth, *args, &block); end
+
+  def name(prefix=T.unsafe(nil)); end
+
+  def namespace(); end
+
+  def parent(); end
+
+  def path(); end
+
+  def respond_to?(meth, include_private=T.unsafe(nil)); end
+
+  def root?(); end
+
+  def title(); end
+
+  def to_str(); end
+
+  def type(); end
+
+  def type=(type); end
+end
+
+class YARD::CodeObjects::Proxy
+  def self.===(other); end
+end
+
+class YARD::CodeObjects::ProxyMethodError
+end
+
+class YARD::CodeObjects::ProxyMethodError
+end
+
+class YARD::CodeObjects::RootObject
+end
+
+class YARD::CodeObjects::RootObject
+end
+
+module YARD::CodeObjects
+  extend ::YARD::CodeObjects::NamespaceMapper
+end
+
+class YARD::Config
+  CONFIG_DIR = ::T.let(nil, ::T.untyped)
+  CONFIG_FILE = ::T.let(nil, ::T.untyped)
+  DEFAULT_CONFIG_OPTIONS = ::T.let(nil, ::T.untyped)
+  IGNORED_PLUGINS = ::T.let(nil, ::T.untyped)
+  YARD_PLUGIN_PREFIX = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Docstring
+  def +(other); end
+
+  def add_tag(*tags); end
+
+  def all(); end
+
+  def all=(content, parse=T.unsafe(nil)); end
+
+  def blank?(only_visible_tags=T.unsafe(nil)); end
+
+  def delete_tag_if(&block); end
+
+  def delete_tags(name); end
+
+  def has_tag?(name); end
+
+  def hash_flag(); end
+
+  def hash_flag=(v); end
+
+  def initialize(content=T.unsafe(nil), object=T.unsafe(nil)); end
+
+  def line(); end
+
+  def line_range(); end
+
+  def line_range=(line_range); end
+
+  def object(); end
+
+  def object=(object); end
+
+  def ref_tags(); end
+
+  def replace(content, parse=T.unsafe(nil)); end
+
+  def resolve_reference(); end
+
+  def summary(); end
+
+  def tag(name); end
+
+  def tags(name=T.unsafe(nil)); end
+
+  def to_raw(); end
+  META_MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Docstring
+  def self.default_parser(); end
+
+  def self.default_parser=(default_parser); end
+
+  def self.new!(text, tags=T.unsafe(nil), object=T.unsafe(nil), raw_data=T.unsafe(nil), ref_object=T.unsafe(nil)); end
+
+  def self.parser(*args); end
+end
+
+class YARD::DocstringParser
+  def create_directive(tag_name, tag_buf); end
+
+  def create_ref_tag(tag_name, name, object_name); end
+
+  def create_tag(tag_name, tag_buf=T.unsafe(nil)); end
+
+  def directives(); end
+
+  def directives=(directives); end
+
+  def handler(); end
+
+  def handler=(handler); end
+
+  def initialize(library=T.unsafe(nil)); end
+
+  def library(); end
+
+  def library=(library); end
+
+  def object(); end
+
+  def object=(object); end
+
+  def parse(content, object=T.unsafe(nil), handler=T.unsafe(nil)); end
+
+  def parse_content(content); end
+
+  def post_process(); end
+
+  def raw_text(); end
+
+  def raw_text=(raw_text); end
+
+  def reference(); end
+
+  def reference=(reference); end
+
+  def state(); end
+
+  def state=(state); end
+
+  def tag_is_directive?(tag_name); end
+
+  def tags(); end
+
+  def tags=(tags); end
+
+  def text(); end
+
+  def text=(text); end
+
+  def to_docstring(); end
+  META_MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::DocstringParser
+  def self.after_parse(&block); end
+
+  def self.after_parse_callbacks(); end
+end
+
+module YARD::GemIndex
+end
+
+module YARD::GemIndex
+  def self.all(); end
+
+  def self.each(&block); end
+
+  def self.find_all_by_name(*args); end
+end
+
+class YARD::Handlers::C::AliasHandler
+  MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::AliasHandler
+end
+
+class YARD::Handlers::C::AttributeHandler
+  MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::AttributeHandler
+end
+
+class YARD::Handlers::C::Base
+  include ::YARD::Handlers::C::HandlerMethods
+  include ::YARD::Parser::C
+  include ::YARD::Handlers::Common::MethodHandler
+  def ensure_variable_defined!(var, max_retries=T.unsafe(nil)); end
+
+  def namespace_for_variable(var); end
+
+  def namespaces(); end
+
+  def override_comments(); end
+
+  def parse_block(opts=T.unsafe(nil)); end
+
+  def process_file(file, object); end
+
+  def processed_files(); end
+
+  def symbols(); end
+  ERROR_CLASS_NAMES = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::Base
+  def self.handles?(statement, processor); end
+
+  def self.statement_class(type=T.unsafe(nil)); end
+end
+
+class YARD::Handlers::C::ClassHandler
+  MATCH1 = ::T.let(nil, ::T.untyped)
+  MATCH2 = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::ClassHandler
+end
+
+class YARD::Handlers::C::ConstantHandler
+  MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::ConstantHandler
+end
+
+module YARD::Handlers::C::HandlerMethods
+  include ::YARD::Parser::C
+  include ::YARD::CodeObjects
+  include ::YARD::Handlers::Common::MethodHandler
+  def handle_alias(var_name, new_name, old_name); end
+
+  def handle_attribute(var_name, name, read, write); end
+
+  def handle_class(var_name, class_name, parent, in_module=T.unsafe(nil)); end
+
+  def handle_constants(type, var_name, const_name, value); end
+
+  def handle_method(scope, var_name, name, func_name, _source_file=T.unsafe(nil)); end
+
+  def handle_module(var_name, module_name, in_module=T.unsafe(nil)); end
+end
+
+module YARD::Handlers::C::HandlerMethods
+end
+
+class YARD::Handlers::C::InitHandler
+  MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::InitHandler
+end
+
+class YARD::Handlers::C::MethodHandler
+  MATCH1 = ::T.let(nil, ::T.untyped)
+  MATCH2 = ::T.let(nil, ::T.untyped)
+  MATCH3 = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::MethodHandler
+end
+
+class YARD::Handlers::C::MixinHandler
+  MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::MixinHandler
+end
+
+class YARD::Handlers::C::ModuleHandler
+  MATCH1 = ::T.let(nil, ::T.untyped)
+  MATCH2 = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::ModuleHandler
+end
+
+class YARD::Handlers::C::OverrideCommentHandler
+end
+
+class YARD::Handlers::C::OverrideCommentHandler
+end
+
+class YARD::Handlers::C::PathHandler
+  MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::PathHandler
+end
+
+class YARD::Handlers::C::StructHandler
+  MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::StructHandler
+end
+
+class YARD::Handlers::C::SymbolHandler
+  MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::C::SymbolHandler
+end
+
+module YARD::Handlers::Common::MethodHandler
+  def add_predicate_return_tag(obj); end
+end
+
+module YARD::Handlers::Common::MethodHandler
+end
+
+class YARD::Handlers::Processor
+  def extra_state(); end
+
+  def extra_state=(extra_state); end
+
+  def file(); end
+
+  def file=(file); end
+
+  def find_handlers(statement); end
+
+  def globals(); end
+
+  def globals=(globals); end
+
+  def initialize(parser); end
+
+  def namespace(); end
+
+  def namespace=(namespace); end
+
+  def owner(); end
+
+  def owner=(owner); end
+
+  def parse_remaining_files(); end
+
+  def parser_type(); end
+
+  def parser_type=(parser_type); end
+
+  def process(statements); end
+
+  def scope(); end
+
+  def scope=(scope); end
+
+  def visibility(); end
+
+  def visibility=(visibility); end
+end
+
+class YARD::Handlers::Processor
+  def self.namespace_for_handler(); end
+
+  def self.register_handler_namespace(type, ns); end
+end
+
+class YARD::Handlers::Ruby::AliasHandler
+end
+
+class YARD::Handlers::Ruby::AliasHandler
+end
+
+class YARD::Handlers::Ruby::AttributeHandler
+  def validated_attribute_names(params); end
+end
+
+class YARD::Handlers::Ruby::Base
+  extend ::YARD::Parser::Ruby
+end
+
+class YARD::Handlers::Ruby::ClassConditionHandler
+  def parse_condition(); end
+
+  def parse_else_block(); end
+
+  def parse_then_block(); end
+end
+
+class YARD::Handlers::Ruby::ClassConditionHandler
+end
+
+class YARD::Handlers::Ruby::ClassVariableHandler
+end
+
+class YARD::Handlers::Ruby::ClassVariableHandler
+end
+
+class YARD::Handlers::Ruby::CommentHandler
+end
+
+class YARD::Handlers::Ruby::CommentHandler
+end
+
+class YARD::Handlers::Ruby::ConstantHandler
+  include ::YARD::Handlers::Ruby::StructHandlerMethods
+end
+
+class YARD::Handlers::Ruby::ConstantHandler
+end
+
+class YARD::Handlers::Ruby::DSLHandler
+  include ::YARD::Handlers::Ruby::DSLHandlerMethods
+end
+
+class YARD::Handlers::Ruby::DSLHandler
+end
+
+module YARD::Handlers::Ruby::DSLHandlerMethods
+  include ::YARD::CodeObjects
+  include ::YARD::Parser
+  def handle_comments(); end
+
+  def register_docstring(object, docstring=T.unsafe(nil), stmt=T.unsafe(nil)); end
+  IGNORE_METHODS = ::T.let(nil, ::T.untyped)
+end
+
+module YARD::Handlers::Ruby::DSLHandlerMethods
+end
+
+module YARD::Handlers::Ruby::DecoratorHandlerMethods
+  def process_decorator(*nodes, &block); end
+end
+
+module YARD::Handlers::Ruby::DecoratorHandlerMethods
+end
+
+class YARD::Handlers::Ruby::ExceptionHandler
+end
+
+class YARD::Handlers::Ruby::ExceptionHandler
+end
+
+class YARD::Handlers::Ruby::ExtendHandler
+end
+
+class YARD::Handlers::Ruby::ExtendHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::AliasHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::AliasHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::AttributeHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::AttributeHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::Base
+  include ::YARD::Parser::Ruby::Legacy::RubyToken
+  def parse_block(opts=T.unsafe(nil)); end
+end
+
+class YARD::Handlers::Ruby::Legacy::Base
+  def self.handles?(stmt); end
+end
+
+class YARD::Handlers::Ruby::Legacy::ClassConditionHandler
+  def parse_condition(); end
+
+  def parse_else_block(); end
+
+  def parse_then_block(); end
+end
+
+class YARD::Handlers::Ruby::Legacy::ClassConditionHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ClassHandler
+  include ::YARD::Handlers::Ruby::StructHandlerMethods
+end
+
+class YARD::Handlers::Ruby::Legacy::ClassHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ClassVariableHandler
+  HANDLER_MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::Ruby::Legacy::ClassVariableHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::CommentHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::CommentHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ConstantHandler
+  include ::YARD::Handlers::Ruby::StructHandlerMethods
+  HANDLER_MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Handlers::Ruby::Legacy::ConstantHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::DSLHandler
+  include ::YARD::Handlers::Ruby::DSLHandlerMethods
+end
+
+class YARD::Handlers::Ruby::Legacy::DSLHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ExceptionHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ExceptionHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ExtendHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ExtendHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::MethodHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::MethodHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::MixinHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::MixinHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ModuleFunctionHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ModuleFunctionHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ModuleHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::ModuleHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::PrivateClassMethodHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::PrivateClassMethodHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::PrivateConstantHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::PrivateConstantHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::VisibilityHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::VisibilityHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::YieldHandler
+end
+
+class YARD::Handlers::Ruby::Legacy::YieldHandler
+end
+
+class YARD::Handlers::Ruby::MethodConditionHandler
+end
+
+class YARD::Handlers::Ruby::MethodConditionHandler
+end
+
+class YARD::Handlers::Ruby::MethodHandler
+  include ::YARD::Handlers::Common::MethodHandler
+  def format_args(); end
+end
+
+class YARD::Handlers::Ruby::MixinHandler
+  def process_mixin(mixin); end
+
+  def recipient(mixin); end
+end
+
+class YARD::Handlers::Ruby::MixinHandler
+end
+
+class YARD::Handlers::Ruby::ModuleFunctionHandler
+  include ::YARD::Handlers::Ruby::DecoratorHandlerMethods
+  def make_module_function(instance_method, namespace); end
+end
+
+class YARD::Handlers::Ruby::ModuleFunctionHandler
+end
+
+class YARD::Handlers::Ruby::ModuleHandler
+end
+
+class YARD::Handlers::Ruby::ModuleHandler
+end
+
+class YARD::Handlers::Ruby::PrivateClassMethodHandler
+  include ::YARD::Handlers::Ruby::DecoratorHandlerMethods
+end
+
+class YARD::Handlers::Ruby::PrivateClassMethodHandler
+end
+
+class YARD::Handlers::Ruby::PrivateConstantHandler
+end
+
+class YARD::Handlers::Ruby::PrivateConstantHandler
+end
+
+class YARD::Handlers::Ruby::PublicClassMethodHandler
+  include ::YARD::Handlers::Ruby::DecoratorHandlerMethods
+end
+
+class YARD::Handlers::Ruby::PublicClassMethodHandler
+end
+
+class YARD::Handlers::Ruby::VisibilityHandler
+  include ::YARD::Handlers::Ruby::DecoratorHandlerMethods
+end
+
+class YARD::Handlers::Ruby::VisibilityHandler
+end
+
+class YARD::Handlers::Ruby::YieldHandler
+end
+
+class YARD::Handlers::Ruby::YieldHandler
+end
+
+class YARD::I18n::Locale
+  def initialize(name); end
+
+  def load(locale_directory); end
+
+  def name(); end
+
+  def translate(message); end
+end
+
+class YARD::I18n::Locale
+  def self.default(); end
+
+  def self.default=(locale); end
+end
+
+class YARD::I18n::Message
+  def ==(other); end
+
+  def add_comment(comment); end
+
+  def add_location(path, line); end
+
+  def comments(); end
+
+  def id(); end
+
+  def initialize(id); end
+
+  def locations(); end
+end
+
+class YARD::I18n::Message
+end
+
+class YARD::I18n::Messages
+  include ::Enumerable
+  def ==(other); end
+
+  def [](id); end
+
+  def each(&block); end
+
+  def messages(); end
+
+  def register(id); end
+end
+
+class YARD::I18n::Messages
+end
+
+class YARD::I18n::PotGenerator
+  def generate(); end
+
+  def initialize(relative_base_path); end
+
+  def messages(); end
+
+  def parse_files(files); end
+
+  def parse_objects(objects); end
+end
+
+class YARD::I18n::PotGenerator
+end
+
+class YARD::I18n::Text
+  def extract_messages(); end
+
+  def initialize(input, options=T.unsafe(nil)); end
+
+  def translate(locale); end
+end
+
+class YARD::I18n::Text
+end
+
+class YARD::Logger
+  def <<(msg=T.unsafe(nil)); end
+
+  def backtrace(exc, level_meth=T.unsafe(nil)); end
+
+  def capture(msg, nontty_log=T.unsafe(nil)); end
+
+  def clear_progress(); end
+
+  def debug(*args); end
+
+  def enter_level(new_level=T.unsafe(nil)); end
+
+  def initialize(pipe, *args); end
+
+  def io(); end
+
+  def io=(pipe); end
+
+  def print(msg=T.unsafe(nil)); end
+
+  def progress(msg, nontty_log=T.unsafe(nil)); end
+
+  def puts(msg=T.unsafe(nil)); end
+
+  def show_backtraces(); end
+
+  def show_backtraces=(show_backtraces); end
+
+  def show_progress(); end
+
+  def show_progress=(show_progress); end
+
+  def warn(*args); end
+
+  def warn_no_continuations(); end
+
+  def warned(); end
+
+  def warned=(warned); end
+  PROGRESS_INDICATORS = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Logger
+  def self.instance(pipe=T.unsafe(nil)); end
+end
+
+module YARD::Parser::Ruby::Legacy::RubyToken
+  def Token(token, value=T.unsafe(nil)); end
+
+  def set_token_position(line, char); end
+  EXPR_ARG = ::T.let(nil, ::T.untyped)
+  EXPR_BEG = ::T.let(nil, ::T.untyped)
+  EXPR_CLASS = ::T.let(nil, ::T.untyped)
+  EXPR_DOT = ::T.let(nil, ::T.untyped)
+  EXPR_END = ::T.let(nil, ::T.untyped)
+  EXPR_FNAME = ::T.let(nil, ::T.untyped)
+  EXPR_MID = ::T.let(nil, ::T.untyped)
+  NEWLINE_TOKEN = ::T.let(nil, ::T.untyped)
+  TkReading2Token = ::T.let(nil, ::T.untyped)
+  TkSymbol2Token = ::T.let(nil, ::T.untyped)
+  TokenDefinitions = ::T.let(nil, ::T.untyped)
+end
+
+module YARD::Parser::Ruby::Legacy::RubyToken
+  def self.def_token(token_n, super_token=T.unsafe(nil), reading=T.unsafe(nil), *opts); end
+end
+
+class YARD::Parser::SourceParser
+  DEFAULT_PATH_GLOB = ::T.let(nil, ::T.untyped)
+  ENCODING_BYTE_ORDER_MARKS = ::T.let(nil, ::T.untyped)
+  ENCODING_LINE = ::T.let(nil, ::T.untyped)
+  FROZEN_STRING_LINE = ::T.let(nil, ::T.untyped)
+  SHEBANG_LINE = ::T.let(nil, ::T.untyped)
+end
+
+module YARD::Registry
+  DEFAULT_PO_DIR = ::T.let(nil, ::T.untyped)
+  DEFAULT_YARDOC_FILE = ::T.let(nil, ::T.untyped)
+  LOCAL_YARDOC_INDEX = ::T.let(nil, ::T.untyped)
+end
+
+module YARD::Registry
+  extend ::Enumerable
+  def self.[](path); end
+
+  def self.all(*types); end
+
+  def self.at(path); end
+
+  def self.checksum_for(data); end
+
+  def self.checksums(); end
+
+  def self.clear(); end
+
+  def self.delete(object); end
+
+  def self.delete_from_disk(); end
+
+  def self.each(&block); end
+
+  def self.instance(); end
+
+  def self.load(files=T.unsafe(nil), reparse=T.unsafe(nil)); end
+
+  def self.load!(file=T.unsafe(nil)); end
+
+  def self.load_all(); end
+
+  def self.load_yardoc(file=T.unsafe(nil)); end
+
+  def self.locale(name); end
+
+  def self.lock_for_writing(file=T.unsafe(nil), &block); end
+
+  def self.locked_for_writing?(file=T.unsafe(nil)); end
+
+  def self.paths(reload=T.unsafe(nil)); end
+
+  def self.po_dir(); end
+
+  def self.po_dir=(dir); end
+
+  def self.proxy_types(); end
+
+  def self.register(object); end
+
+  def self.resolve(namespace, name, inheritance=T.unsafe(nil), proxy_fallback=T.unsafe(nil), type=T.unsafe(nil)); end
+
+  def self.root(); end
+
+  def self.save(merge=T.unsafe(nil), file=T.unsafe(nil)); end
+
+  def self.single_object_db(); end
+
+  def self.single_object_db=(v); end
+
+  def self.yardoc_file(); end
+
+  def self.yardoc_file=(v); end
+
+  def self.yardoc_file_for_gem(gem, ver_require=T.unsafe(nil), for_writing=T.unsafe(nil)); end
+end
+
+class YARD::RegistryResolver
+  include ::YARD::CodeObjects::NamespaceMapper
+  def initialize(registry=T.unsafe(nil)); end
+
+  def lookup_by_path(path, opts=T.unsafe(nil)); end
+end
+
+class YARD::RegistryResolver
+end
+
+class YARD::RegistryStore
+  def [](key); end
+
+  def []=(key, value); end
+
+  def checksums(); end
+
+  def checksums_path(); end
+
+  def delete(key); end
+
+  def destroy(force=T.unsafe(nil)); end
+
+  def file(); end
+
+  def get(key); end
+
+  def keys(reload=T.unsafe(nil)); end
+
+  def load(file=T.unsafe(nil)); end
+
+  def load!(file=T.unsafe(nil)); end
+
+  def load_all(); end
+
+  def load_yardoc(); end
+
+  def locale(name); end
+
+  def lock_for_writing(file=T.unsafe(nil), &block); end
+
+  def locked_for_writing?(file=T.unsafe(nil)); end
+
+  def object_types_path(); end
+
+  def objects_path(); end
+
+  def paths_for_type(type, reload=T.unsafe(nil)); end
+
+  def proxy_types(); end
+
+  def proxy_types_path(); end
+
+  def put(key, value); end
+
+  def root(); end
+
+  def save(merge=T.unsafe(nil), file=T.unsafe(nil)); end
+
+  def values(reload=T.unsafe(nil)); end
+
+  def values_for_type(type, reload=T.unsafe(nil)); end
+end
+
+class YARD::RegistryStore
+end
+
+class YARD::Serializers::Base
+  def after_serialize(data); end
+
+  def before_serialize(); end
+
+  def exists?(object); end
+
+  def initialize(opts=T.unsafe(nil)); end
+
+  def options(); end
+
+  def serialize(object, data); end
+
+  def serialized_path(object); end
+end
+
+class YARD::Serializers::Base
+end
+
+class YARD::Serializers::FileSystemSerializer
+  def basepath(); end
+
+  def basepath=(value); end
+
+  def extension(); end
+
+  def extension=(value); end
+end
+
+class YARD::Serializers::FileSystemSerializer
+end
+
+class YARD::Serializers::ProcessSerializer
+  def initialize(cmd); end
+
+  def serialize(_object, data); end
+end
+
+class YARD::Serializers::ProcessSerializer
+end
+
+class YARD::Serializers::StdoutSerializer
+  def initialize(wrap=T.unsafe(nil)); end
+
+  def serialize(_object, data); end
+end
+
+class YARD::Serializers::StdoutSerializer
+end
+
+class YARD::Serializers::YardocSerializer
+  def checksums_path(); end
+
+  def complete?(); end
+
+  def complete_lock_path(); end
+
+  def deserialize(path, is_path=T.unsafe(nil)); end
+
+  def initialize(yfile); end
+
+  def lock_for_writing(); end
+
+  def locked_for_writing?(); end
+
+  def object_types_path(); end
+
+  def objects_path(); end
+
+  def processing_path(); end
+
+  def proxy_types_path(); end
+
+  def serialize(object); end
+end
+
+class YARD::Serializers::YardocSerializer
+end
+
+class YARD::Server::Adapter
+  def add_library(library); end
+
+  def document_root(); end
+
+  def document_root=(document_root); end
+
+  def initialize(libs, opts=T.unsafe(nil), server_opts=T.unsafe(nil)); end
+
+  def libraries(); end
+
+  def libraries=(libraries); end
+
+  def options(); end
+
+  def options=(options); end
+
+  def router(); end
+
+  def router=(router); end
+
+  def server_options(); end
+
+  def server_options=(server_options); end
+
+  def start(); end
+end
+
+class YARD::Server::Adapter
+  def self.setup(); end
+
+  def self.shutdown(); end
+end
+
+class YARD::Server::Commands::Base
+  def adapter(); end
+
+  def adapter=(adapter); end
+
+  def body(); end
+
+  def body=(body); end
+
+  def cache(data); end
+
+  def caching(); end
+
+  def caching=(caching); end
+
+  def call(request); end
+
+  def command_options(); end
+
+  def command_options=(command_options); end
+
+  def headers(); end
+
+  def headers=(headers); end
+
+  def initialize(opts=T.unsafe(nil)); end
+
+  def not_found(); end
+
+  def path(); end
+
+  def path=(path); end
+
+  def redirect(url); end
+
+  def render(object=T.unsafe(nil)); end
+
+  def request(); end
+
+  def request=(request); end
+
+  def run(); end
+
+  def status(); end
+
+  def status=(status); end
+end
+
+class YARD::Server::Commands::Base
+end
+
+class YARD::Server::Commands::DisplayFileCommand
+  def index(); end
+
+  def index=(index); end
+end
+
+class YARD::Server::Commands::DisplayFileCommand
+end
+
+class YARD::Server::Commands::DisplayObjectCommand
+  include ::YARD::Server::DocServerHelper
+  def index(); end
+end
+
+class YARD::Server::Commands::DisplayObjectCommand
+end
+
+class YARD::Server::Commands::FramesCommand
+end
+
+class YARD::Server::Commands::FramesCommand
+end
+
+class YARD::Server::Commands::LibraryCommand
+  def incremental(); end
+
+  def incremental=(incremental); end
+
+  def library(); end
+
+  def library=(library); end
+
+  def options(); end
+
+  def options=(options); end
+
+  def serializer(); end
+
+  def serializer=(serializer); end
+
+  def single_library(); end
+
+  def single_library=(single_library); end
+
+  def use_fork(); end
+
+  def use_fork=(use_fork); end
+  CAN_FORK = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Server::Commands::LibraryCommand
+end
+
+class YARD::Server::Commands::LibraryIndexCommand
+  def options(); end
+
+  def options=(options); end
+end
+
+class YARD::Server::Commands::LibraryIndexCommand
+end
+
+class YARD::Server::Commands::ListCommand
+  include ::YARD::Templates::Helpers::BaseHelper
+end
+
+class YARD::Server::Commands::ListCommand
+end
+
+class YARD::Server::Commands::RootRequestCommand
+  include ::YARD::Server::Commands::StaticFileHelpers
+  include ::WEBrick::HTTPUtils
+end
+
+class YARD::Server::Commands::RootRequestCommand
+end
+
+class YARD::Server::Commands::SearchCommand
+  include ::YARD::Templates::Helpers::BaseHelper
+  include ::YARD::Templates::Helpers::ModuleHelper
+  include ::YARD::Server::DocServerHelper
+  def query(); end
+
+  def query=(query); end
+
+  def results(); end
+
+  def results=(results); end
+
+  def visible_results(); end
+end
+
+class YARD::Server::Commands::SearchCommand
+end
+
+class YARD::Server::Commands::StaticFileCommand
+  include ::YARD::Server::Commands::StaticFileHelpers
+  include ::WEBrick::HTTPUtils
+  STATIC_PATHS = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Server::Commands::StaticFileCommand
+end
+
+module YARD::Server::Commands::StaticFileHelpers
+  include ::WEBrick::HTTPUtils
+  def favicon?(); end
+
+  def static_template_file?(); end
+end
+
+module YARD::Server::Commands::StaticFileHelpers
+  def self.find_file(adapter, url); end
+end
+
+module YARD::Server::DocServerHelper
+  def abs_url(*path_components); end
+
+  def base_path(path); end
+
+  def mtime(file); end
+
+  def mtime_url(file); end
+
+  def router(); end
+
+  def url_for(obj, anchor=T.unsafe(nil), relative=T.unsafe(nil)); end
+
+  def url_for_file(filename, anchor=T.unsafe(nil)); end
+
+  def url_for_frameset(); end
+
+  def url_for_index(); end
+
+  def url_for_list(type); end
+
+  def url_for_main(); end
+end
+
+module YARD::Server::DocServerHelper
+end
+
+class YARD::Server::DocServerSerializer
+  def initialize(_command=T.unsafe(nil)); end
+end
+
+class YARD::Server::DocServerSerializer
+end
+
+class YARD::Server::FinishRequest
+end
+
+class YARD::Server::FinishRequest
+end
+
+class YARD::Server::LibraryVersion
+  def ==(other); end
+
+  def eql?(other); end
+
+  def equal?(other); end
+
+  def gemspec(); end
+
+  def initialize(name, version=T.unsafe(nil), yardoc=T.unsafe(nil), source=T.unsafe(nil)); end
+
+  def load_yardoc_from_disk(); end
+
+  def load_yardoc_from_gem(); end
+
+  def name(); end
+
+  def name=(name); end
+
+  def prepare!(); end
+
+  def ready?(); end
+
+  def source(); end
+
+  def source=(source); end
+
+  def source_path(); end
+
+  def source_path=(source_path); end
+
+  def source_path_for_disk(); end
+
+  def source_path_for_gem(); end
+
+  def to_s(url_format=T.unsafe(nil)); end
+
+  def version(); end
+
+  def version=(version); end
+
+  def yardoc_file(); end
+
+  def yardoc_file=(yardoc_file); end
+
+  def yardoc_file_for_gem(); end
+end
+
+class YARD::Server::LibraryVersion
+end
+
+class YARD::Server::NotFoundError
+end
+
+class YARD::Server::NotFoundError
+end
+
+class YARD::Server::Router
+  include ::YARD::Server::StaticCaching
+  include ::YARD::Server::Commands
+  def adapter(); end
+
+  def adapter=(adapter); end
+
+  def call(request); end
+
+  def docs_prefix(); end
+
+  def final_options(library, paths); end
+
+  def initialize(adapter); end
+
+  def list_prefix(); end
+
+  def parse_library_from_path(paths); end
+
+  def request(); end
+
+  def request=(request); end
+
+  def route(path=T.unsafe(nil)); end
+
+  def route_docs(library, paths); end
+
+  def route_index(); end
+
+  def route_list(library, paths); end
+
+  def route_search(library, paths); end
+
+  def route_static(library, paths); end
+
+  def search_prefix(); end
+
+  def static_prefix(); end
+end
+
+class YARD::Server::Router
+end
+
+module YARD::Server::StaticCaching
+  def check_static_cache(); end
+end
+
+module YARD::Server::StaticCaching
+end
+
+class YARD::Server::WebrickAdapter
+end
+
+class YARD::Server::WebrickAdapter
+end
+
+class YARD::Server::WebrickServlet
+  def adapter(); end
+
+  def adapter=(adapter); end
+
+  def do_GET(request, response); end
+
+  def initialize(server, adapter); end
+end
+
+class YARD::Server::WebrickServlet
+end
+
+class YARD::StubProxy
+  def _dump(_depth); end
+
+  def initialize(path, transient=T.unsafe(nil)); end
+
+  def method_missing(meth, *args, &block); end
+  FILELEN = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::StubProxy
+  def self._load(str); end
+end
+
+class YARD::Tags::AttributeDirective
+end
+
+class YARD::Tags::AttributeDirective
+end
+
+class YARD::Tags::DefaultFactory
+  def parse_tag(tag_name, text); end
+
+  def parse_tag_with_name(tag_name, text); end
+
+  def parse_tag_with_options(tag_name, text); end
+
+  def parse_tag_with_title_and_text(tag_name, text); end
+
+  def parse_tag_with_types(tag_name, text); end
+
+  def parse_tag_with_types_and_name(tag_name, text); end
+
+  def parse_tag_with_types_and_title(tag_name, text); end
+
+  def parse_tag_with_types_name_and_default(tag_name, text); end
+  TYPELIST_CLOSING_CHARS = ::T.let(nil, ::T.untyped)
+  TYPELIST_OPENING_CHARS = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Tags::DefaultFactory
+end
+
+class YARD::Tags::DefaultTag
+  def defaults(); end
+
+  def initialize(tag_name, text, types=T.unsafe(nil), name=T.unsafe(nil), defaults=T.unsafe(nil)); end
+end
+
+class YARD::Tags::DefaultTag
+end
+
+class YARD::Tags::Directive
+  def after_parse(); end
+
+  def call(); end
+
+  def expanded_text(); end
+
+  def expanded_text=(expanded_text); end
+
+  def handler(); end
+
+  def initialize(tag, parser); end
+
+  def inside_directive?(); end
+
+  def object(); end
+
+  def parser(); end
+
+  def parser=(parser); end
+
+  def tag(); end
+
+  def tag=(tag); end
+end
+
+class YARD::Tags::Directive
+end
+
+class YARD::Tags::EndGroupDirective
+end
+
+class YARD::Tags::EndGroupDirective
+end
+
+class YARD::Tags::GroupDirective
+end
+
+class YARD::Tags::GroupDirective
+end
+
+class YARD::Tags::Library
+  def abstract_tag(text); end
+
+  def api_tag(text); end
+
+  def attr_reader_tag(text); end
+
+  def attr_tag(text); end
+
+  def attr_writer_tag(text); end
+
+  def attribute_directive(tag, parser); end
+
+  def author_tag(text); end
+
+  def deprecated_tag(text); end
+
+  def directive_create(tag_name, tag_buf, parser); end
+
+  def endgroup_directive(tag, parser); end
+
+  def example_tag(text); end
+
+  def factory(); end
+
+  def factory=(factory); end
+
+  def group_directive(tag, parser); end
+
+  def has_directive?(tag_name); end
+
+  def has_tag?(tag_name); end
+
+  def initialize(factory=T.unsafe(nil)); end
+
+  def macro_directive(tag, parser); end
+
+  def method_directive(tag, parser); end
+
+  def note_tag(text); end
+
+  def option_tag(text); end
+
+  def overload_tag(text); end
+
+  def param_tag(text); end
+
+  def parse_directive(tag, parser); end
+
+  def private_tag(text); end
+
+  def raise_tag(text); end
+
+  def return_tag(text); end
+
+  def scope_directive(tag, parser); end
+
+  def see_tag(text); end
+
+  def since_tag(text); end
+
+  def tag_create(tag_name, tag_buf); end
+
+  def todo_tag(text); end
+
+  def version_tag(text); end
+
+  def visibility_directive(tag, parser); end
+
+  def yield_tag(text); end
+
+  def yieldparam_tag(text); end
+
+  def yieldreturn_tag(text); end
+end
+
+class YARD::Tags::Library
+  def self.default_factory(); end
+
+  def self.default_factory=(factory); end
+
+  def self.define_directive(tag, tag_meth=T.unsafe(nil), directive_class=T.unsafe(nil)); end
+
+  def self.define_tag(label, tag, meth=T.unsafe(nil)); end
+
+  def self.directive_method_name(tag_name); end
+
+  def self.factory_method_for(tag); end
+
+  def self.factory_method_for_directive(directive); end
+
+  def self.instance(); end
+
+  def self.labels(); end
+
+  def self.sorted_labels(); end
+
+  def self.tag_method_name(tag_name); end
+
+  def self.transitive_tags(); end
+
+  def self.transitive_tags=(transitive_tags); end
+
+  def self.visible_tags(); end
+
+  def self.visible_tags=(visible_tags); end
+end
+
+class YARD::Tags::MacroDirective
+end
+
+class YARD::Tags::MacroDirective
+end
+
+class YARD::Tags::MethodDirective
+  def create_object(); end
+
+  def method_name(); end
+
+  def method_signature(); end
+
+  def sanitized_tag_signature(); end
+
+  def use_indented_text(); end
+  SCOPE_MATCH = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Tags::MethodDirective
+end
+
+class YARD::Tags::OptionTag
+  def initialize(tag_name, name, pair); end
+
+  def pair(); end
+
+  def pair=(pair); end
+end
+
+class YARD::Tags::OptionTag
+end
+
+class YARD::Tags::OverloadTag
+  def docstring(); end
+
+  def has_tag?(name); end
+
+  def initialize(tag_name, text); end
+
+  def is_a?(other); end
+
+  def kind_of?(other); end
+
+  def method_missing(*args, &block); end
+
+  def name(prefix=T.unsafe(nil)); end
+
+  def object=(value); end
+
+  def parameters(); end
+
+  def signature(); end
+
+  def tag(name); end
+
+  def tags(name=T.unsafe(nil)); end
+end
+
+class YARD::Tags::OverloadTag
+end
+
+class YARD::Tags::ParseDirective
+end
+
+class YARD::Tags::ParseDirective
+end
+
+module YARD::Tags::RefTag
+  def owner(); end
+
+  def owner=(owner); end
+end
+
+module YARD::Tags::RefTag
+end
+
+class YARD::Tags::RefTagList
+  def initialize(tag_name, owner, name=T.unsafe(nil)); end
+
+  def name(); end
+
+  def name=(name); end
+
+  def owner(); end
+
+  def owner=(owner); end
+
+  def tag_name(); end
+
+  def tag_name=(tag_name); end
+
+  def tags(); end
+end
+
+class YARD::Tags::RefTagList
+end
+
+class YARD::Tags::ScopeDirective
+end
+
+class YARD::Tags::ScopeDirective
+end
+
+class YARD::Tags::Tag
+  def explain_types(); end
+
+  def initialize(tag_name, text, types=T.unsafe(nil), name=T.unsafe(nil)); end
+
+  def name(); end
+
+  def name=(name); end
+
+  def object(); end
+
+  def object=(object); end
+
+  def tag_name(); end
+
+  def tag_name=(tag_name); end
+
+  def text(); end
+
+  def text=(text); end
+
+  def type(); end
+
+  def types(); end
+
+  def types=(types); end
+end
+
+class YARD::Tags::Tag
+end
+
+class YARD::Tags::TagFormatError
+end
+
+class YARD::Tags::TagFormatError
+end
+
+class YARD::Tags::TypesExplainer
+end
+
+class YARD::Tags::TypesExplainer::CollectionType
+  def initialize(name, types); end
+
+  def to_s(_singular=T.unsafe(nil)); end
+
+  def types(); end
+
+  def types=(types); end
+end
+
+class YARD::Tags::TypesExplainer::CollectionType
+end
+
+class YARD::Tags::TypesExplainer::FixedCollectionType
+end
+
+class YARD::Tags::TypesExplainer::FixedCollectionType
+end
+
+class YARD::Tags::TypesExplainer::HashCollectionType
+  def initialize(name, key_types, value_types); end
+
+  def key_types(); end
+
+  def key_types=(key_types); end
+
+  def to_s(_singular=T.unsafe(nil)); end
+
+  def value_types(); end
+
+  def value_types=(value_types); end
+end
+
+class YARD::Tags::TypesExplainer::HashCollectionType
+end
+
+class YARD::Tags::TypesExplainer::Parser
+  include ::YARD::CodeObjects
+  def initialize(string); end
+
+  def parse(); end
+  TOKENS = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Tags::TypesExplainer::Parser
+  def self.parse(string); end
+end
+
+class YARD::Tags::TypesExplainer::Type
+  def initialize(name); end
+
+  def name(); end
+
+  def name=(name); end
+
+  def to_s(singular=T.unsafe(nil)); end
+end
+
+class YARD::Tags::TypesExplainer::Type
+end
+
+class YARD::Tags::TypesExplainer
+  def self.explain(*types); end
+
+  def self.explain!(*types); end
+end
+
+class YARD::Tags::VisibilityDirective
+end
+
+class YARD::Tags::VisibilityDirective
+end
+
+module YARD::Templates::Engine
+end
+
+module YARD::Templates::Engine
+  def self.generate(objects, options=T.unsafe(nil)); end
+
+  def self.register_template_path(path); end
+
+  def self.render(options=T.unsafe(nil)); end
+
+  def self.template(*path); end
+
+  def self.template!(path, full_paths=T.unsafe(nil)); end
+
+  def self.template_paths(); end
+
+  def self.template_paths=(template_paths); end
+
+  def self.with_serializer(object, serializer); end
+end
+
+module YARD::Templates::ErbCache
+end
+
+module YARD::Templates::ErbCache
+  def self.clear!(); end
+
+  def self.method_for(filename); end
+end
+
+module YARD::Templates::Helpers::BaseHelper
+  def format_object_title(object); end
+
+  def format_object_type(object); end
+
+  def format_source(value); end
+
+  def format_types(list, brackets=T.unsafe(nil)); end
+
+  def globals(); end
+
+  def h(text); end
+
+  def link_file(filename, title=T.unsafe(nil), anchor=T.unsafe(nil)); end
+
+  def link_include_file(file); end
+
+  def link_include_object(obj); end
+
+  def link_object(obj, title=T.unsafe(nil)); end
+
+  def link_url(url, title=T.unsafe(nil), params=T.unsafe(nil)); end
+
+  def linkify(*args); end
+
+  def object(); end
+
+  def object=(object); end
+
+  def owner(); end
+
+  def run_verifier(list); end
+
+  def serializer(); end
+
+  def serializer=(serializer); end
+end
+
+module YARD::Templates::Helpers::BaseHelper
+end
+
+module YARD::Templates::Helpers::FilterHelper
+  def is_class?(object); end
+
+  def is_method?(object); end
+
+  def is_module?(object); end
+
+  def is_namespace?(object); end
+end
+
+module YARD::Templates::Helpers::FilterHelper
+end
+
+module YARD::Templates::Helpers::HtmlHelper
+  include ::YARD::Templates::Helpers::MarkupHelper
+  include ::YARD::Templates::Helpers::HtmlSyntaxHighlightHelper
+  include ::YARD::Templates::Helpers::ModuleHelper
+  def anchor_for(object); end
+
+  def charset(); end
+
+  def format_object_name_list(objects); end
+
+  def format_types(typelist, brackets=T.unsafe(nil)); end
+
+  def h(text); end
+
+  def html_markup_asciidoc(text); end
+
+  def html_markup_html(text); end
+
+  def html_markup_markdown(text); end
+
+  def html_markup_none(text); end
+
+  def html_markup_org(text); end
+
+  def html_markup_pre(text); end
+
+  def html_markup_rdoc(text); end
+
+  def html_markup_ruby(source); end
+
+  def html_markup_text(text); end
+
+  def html_markup_textile(text); end
+
+  def html_markup_textile_strict(text); end
+
+  def html_syntax_highlight(source, type=T.unsafe(nil)); end
+
+  def html_syntax_highlight_plain(source); end
+
+  def htmlify(text, markup=T.unsafe(nil)); end
+
+  def htmlify_line(*args); end
+
+  def insert_include(text, markup=T.unsafe(nil)); end
+
+  def link_file(filename, title=T.unsafe(nil), anchor=T.unsafe(nil)); end
+
+  def link_include_file(file); end
+
+  def link_include_object(obj); end
+
+  def link_object(obj, title=T.unsafe(nil), anchor=T.unsafe(nil), relative=T.unsafe(nil)); end
+
+  def link_url(url, title=T.unsafe(nil), params=T.unsafe(nil)); end
+
+  def mtime(_file); end
+
+  def mtime_url(obj, anchor=T.unsafe(nil), relative=T.unsafe(nil)); end
+
+  def resolve_links(text); end
+
+  def signature(meth, link=T.unsafe(nil), show_extras=T.unsafe(nil), full_attr_name=T.unsafe(nil)); end
+
+  def signature_types(meth, link=T.unsafe(nil)); end
+
+  def url_for(obj, anchor=T.unsafe(nil), relative=T.unsafe(nil)); end
+
+  def url_for_file(filename, anchor=T.unsafe(nil)); end
+
+  def url_for_frameset(); end
+
+  def url_for_index(); end
+
+  def url_for_list(type); end
+
+  def url_for_main(); end
+  ASCIIDOC_ATTRIBUTES = ::T.let(nil, ::T.untyped)
+  URLMATCH = ::T.let(nil, ::T.untyped)
+end
+
+module YARD::Templates::Helpers::HtmlHelper
+  def self.urlencode(text); end
+end
+
+module YARD::Templates::Helpers::HtmlSyntaxHighlightHelper
+  include ::YARD::Templates::Helpers::ModuleHelper
+  def html_syntax_highlight_ruby(source); end
+end
+
+module YARD::Templates::Helpers::HtmlSyntaxHighlightHelper
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkdown
+  def fix_typewriter(html); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkdown
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup
+  def from_path(); end
+
+  def from_path=(from_path); end
+
+  def initialize(text); end
+
+  def to_html(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP
+  def add_html(tag, name); end
+
+  def add_regexp_handling(pattern, name); end
+
+  def add_word_pair(start, stop, name); end
+
+  def attribute_manager(); end
+
+  def convert(input, formatter); end
+
+  def initialize(attribute_manager=T.unsafe(nil)); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::AttrChanger
+  def turn_off(); end
+
+  def turn_off=(_); end
+
+  def turn_on(); end
+
+  def turn_on=(_); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::AttrChanger
+  def self.[](*arg); end
+
+  def self.members(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::AttrSpan
+  def [](n); end
+
+  def initialize(length); end
+
+  def set_attrs(start, length, bits); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::AttrSpan
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::AttributeManager
+  def add_html(tag, name); end
+
+  def add_regexp_handling(pattern, name); end
+
+  def add_word_pair(start, stop, name); end
+
+  def attribute(turn_on, turn_off); end
+
+  def attributes(); end
+
+  def change_attribute(current, new); end
+
+  def changed_attribute_by_name(current_set, new_set); end
+
+  def convert_attrs(str, attrs); end
+
+  def convert_html(str, attrs); end
+
+  def convert_regexp_handlings(str, attrs); end
+
+  def copy_string(start_pos, end_pos); end
+
+  def display_attributes(); end
+
+  def flow(str); end
+
+  def html_tags(); end
+
+  def mask_protected_sequences(); end
+
+  def matching_word_pairs(); end
+
+  def protectable(); end
+
+  def regexp_handlings(); end
+
+  def split_into_flow(); end
+
+  def unmask_protected_sequences(); end
+
+  def word_pair_map(); end
+  A_PROTECT = ::T.let(nil, ::T.untyped)
+  NULL = ::T.let(nil, ::T.untyped)
+  PROTECT_ATTR = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::AttributeManager
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Attributes
+  def as_string(bitmap); end
+
+  def bitmap_for(name); end
+
+  def each_name_of(bitmap); end
+
+  def regexp_handling(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Attributes
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::BlankLine
+  def accept(visitor); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::BlankLine
+  def self.new(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::BlockQuote
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::BlockQuote
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Document
+  include ::Enumerable
+  def <<(part); end
+
+  def ==(other); end
+
+  def accept(visitor); end
+
+  def concat(parts); end
+
+  def each(&block); end
+
+  def empty?(); end
+
+  def file(); end
+
+  def file=(location); end
+
+  def initialize(*parts); end
+
+  def merge(other); end
+
+  def merged?(); end
+
+  def omit_headings_below(); end
+
+  def omit_headings_below=(omit_headings_below); end
+
+  def parts(); end
+
+  def push(*parts); end
+
+  def table_of_contents(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Document
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Formatter
+  def accept_document(document); end
+
+  def add_regexp_handling_RDOCLINK(); end
+
+  def add_regexp_handling_TIDYLINK(); end
+
+  def add_tag(name, start, stop); end
+
+  def annotate(tag); end
+
+  def convert(content); end
+
+  def convert_flow(flow); end
+
+  def convert_regexp_handling(target); end
+
+  def convert_string(string); end
+
+  def ignore(*node); end
+
+  def in_tt?(); end
+
+  def initialize(options, markup=T.unsafe(nil)); end
+
+  def off_tags(res, item); end
+
+  def on_tags(res, item); end
+
+  def parse_url(url); end
+
+  def tt?(tag); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Formatter::InlineTag
+  def bit(); end
+
+  def bit=(_); end
+
+  def off(); end
+
+  def off=(_); end
+
+  def on(); end
+
+  def on=(_); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Formatter::InlineTag
+  def self.[](*arg); end
+
+  def self.members(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Formatter
+  def self.gen_relative_url(path, target); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::HardBreak
+  def ==(other); end
+
+  def accept(visitor); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::HardBreak
+  def self.new(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Heading
+  def accept(visitor); end
+
+  def aref(); end
+
+  def label(context=T.unsafe(nil)); end
+
+  def level(); end
+
+  def level=(_); end
+
+  def plain_html(); end
+
+  def text(); end
+
+  def text=(_); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Heading
+  def self.[](*arg); end
+
+  def self.members(); end
+
+  def self.to_html(); end
+
+  def self.to_label(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Include
+  def ==(other); end
+
+  def file(); end
+
+  def include_path(); end
+
+  def initialize(file, include_path); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Include
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::IndentedParagraph
+  def indent(); end
+
+  def initialize(indent, *parts); end
+
+  def text(hard_break=T.unsafe(nil)); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::IndentedParagraph
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::List
+  def <<(item); end
+
+  def ==(other); end
+
+  def accept(visitor); end
+
+  def empty?(); end
+
+  def initialize(type=T.unsafe(nil), *items); end
+
+  def items(); end
+
+  def last(); end
+
+  def push(*items); end
+
+  def type(); end
+
+  def type=(type); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::List
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ListItem
+  def <<(part); end
+
+  def ==(other); end
+
+  def accept(visitor); end
+
+  def empty?(); end
+
+  def initialize(label=T.unsafe(nil), *parts); end
+
+  def label(); end
+
+  def label=(label); end
+
+  def length(); end
+
+  def parts(); end
+
+  def push(*parts); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ListItem
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Paragraph
+  def text(hard_break=T.unsafe(nil)); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Paragraph
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Parser
+  include ::RDoc::Text
+  def build_heading(level); end
+
+  def build_list(margin); end
+
+  def build_paragraph(margin); end
+
+  def build_verbatim(margin); end
+
+  def char_pos(byte_offset); end
+
+  def debug(); end
+
+  def debug=(debug); end
+
+  def get(); end
+
+  def parse(parent, indent=T.unsafe(nil)); end
+
+  def parse_text(parent, indent); end
+
+  def peek_token(); end
+
+  def setup_scanner(input); end
+
+  def skip(token_type, error=T.unsafe(nil)); end
+
+  def token_pos(byte_offset); end
+
+  def tokenize(input); end
+
+  def tokens(); end
+
+  def unget(); end
+  LIST_TOKENS = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Parser::Error
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Parser::Error
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Parser::ParseError
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Parser::ParseError
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Parser
+  def self.parse(str); end
+
+  def self.tokenize(str); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::PreProcess
+  def find_include_file(name); end
+
+  def handle(text, code_object=T.unsafe(nil), &block); end
+
+  def handle_directive(prefix, directive, param, code_object=T.unsafe(nil), encoding=T.unsafe(nil)); end
+
+  def include_file(name, indent, encoding); end
+
+  def initialize(input_file_name, include_path); end
+
+  def options(); end
+
+  def options=(options); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::PreProcess
+  def self.post_process(&block); end
+
+  def self.post_processors(); end
+
+  def self.register(directive, &block); end
+
+  def self.registered(); end
+
+  def self.reset(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Raw
+  def <<(text); end
+
+  def ==(other); end
+
+  def accept(visitor); end
+
+  def initialize(*parts); end
+
+  def merge(other); end
+
+  def parts(); end
+
+  def push(*texts); end
+
+  def text(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Raw
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::RegexpHandling
+  def ==(o); end
+
+  def initialize(type, text); end
+
+  def text(); end
+
+  def text=(text); end
+
+  def type(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::RegexpHandling
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Rule
+  def accept(visitor); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Rule
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToAnsi
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToAnsi
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToBs
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToBs
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToHtml
+  include ::RDoc::Text
+  def accept_blank_line(blank_line); end
+
+  def accept_block_quote(block_quote); end
+
+  def accept_heading(heading); end
+
+  def accept_list_end(list); end
+
+  def accept_list_item_end(list_item); end
+
+  def accept_list_item_start(list_item); end
+
+  def accept_list_start(list); end
+
+  def accept_paragraph(paragraph); end
+
+  def accept_raw(raw); end
+
+  def accept_rule(rule); end
+
+  def accept_verbatim(verbatim); end
+
+  def code_object(); end
+
+  def code_object=(code_object); end
+
+  def convert_string(text); end
+
+  def end_accepting(); end
+
+  def from_path(); end
+
+  def from_path=(from_path); end
+
+  def gen_url(url, text); end
+
+  def handle_RDOCLINK(url); end
+
+  def handle_regexp_HARD_BREAK(target); end
+
+  def handle_regexp_HYPERLINK(target); end
+
+  def handle_regexp_RDOCLINK(target); end
+
+  def handle_regexp_TIDYLINK(target); end
+
+  def html_list_name(list_type, open_tag); end
+
+  def in_list_entry(); end
+
+  def init_tags(); end
+
+  def list(); end
+
+  def list_end_for(list_type); end
+
+  def list_item_start(list_item, list_type); end
+
+  def parseable?(text); end
+
+  def res(); end
+
+  def start_accepting(); end
+
+  def to_html(item); end
+  LIST_TYPE_TO_HTML = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToHtml
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToHtmlCrossref
+  def context(); end
+
+  def context=(context); end
+
+  def cross_reference(name, text=T.unsafe(nil), code=T.unsafe(nil)); end
+
+  def handle_regexp_CROSSREF(target); end
+
+  def initialize(options, from_path, context, markup=T.unsafe(nil)); end
+
+  def link(name, text, code=T.unsafe(nil)); end
+
+  def show_hash(); end
+
+  def show_hash=(show_hash); end
+  ALL_CROSSREF_REGEXP = ::T.let(nil, ::T.untyped)
+  CLASS_REGEXP_STR = ::T.let(nil, ::T.untyped)
+  CROSSREF_REGEXP = ::T.let(nil, ::T.untyped)
+  METHOD_REGEXP_STR = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToHtmlCrossref
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToHtmlSnippet
+  def accept_raw(*node); end
+
+  def accept_rule(*node); end
+
+  def add_paragraph(); end
+
+  def character_limit(); end
+
+  def characters(); end
+
+  def handle_regexp_CROSSREF(target); end
+
+  def initialize(options, characters=T.unsafe(nil), paragraphs=T.unsafe(nil), markup=T.unsafe(nil)); end
+
+  def mask(); end
+
+  def paragraph_limit(); end
+
+  def paragraphs(); end
+
+  def truncate(text); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToHtmlSnippet
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToJoinedParagraph
+  def accept_block_quote(*node); end
+
+  def accept_heading(*node); end
+
+  def accept_list_end(*node); end
+
+  def accept_list_item_end(*node); end
+
+  def accept_list_item_start(*node); end
+
+  def accept_list_start(*node); end
+
+  def accept_paragraph(paragraph); end
+
+  def accept_raw(*node); end
+
+  def accept_rule(*node); end
+
+  def accept_verbatim(*node); end
+
+  def end_accepting(); end
+
+  def initialize(); end
+
+  def start_accepting(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToJoinedParagraph
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToLabel
+  def accept_blank_line(*node); end
+
+  def accept_block_quote(*node); end
+
+  def accept_heading(*node); end
+
+  def accept_list_end(*node); end
+
+  def accept_list_item_end(*node); end
+
+  def accept_list_item_start(*node); end
+
+  def accept_list_start(*node); end
+
+  def accept_paragraph(*node); end
+
+  def accept_raw(*node); end
+
+  def accept_rule(*node); end
+
+  def accept_verbatim(*node); end
+
+  def convert(text); end
+
+  def end_accepting(*node); end
+
+  def handle_regexp_CROSSREF(target); end
+
+  def handle_regexp_HARD_BREAK(*node); end
+
+  def handle_regexp_TIDYLINK(target); end
+
+  def initialize(markup=T.unsafe(nil)); end
+
+  def res(); end
+
+  def start_accepting(*node); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToLabel
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToMarkdown
+  def gen_url(url, text); end
+
+  def handle_rdoc_link(url); end
+
+  def handle_regexp_RDOCLINK(target); end
+
+  def handle_regexp_TIDYLINK(target); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToMarkdown
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToRdoc
+  def accept_blank_line(blank_line); end
+
+  def accept_block_quote(block_quote); end
+
+  def accept_heading(heading); end
+
+  def accept_indented_paragraph(paragraph); end
+
+  def accept_list_end(list); end
+
+  def accept_list_item_end(list_item); end
+
+  def accept_list_item_start(list_item); end
+
+  def accept_list_start(list); end
+
+  def accept_paragraph(paragraph); end
+
+  def accept_raw(raw); end
+
+  def accept_rule(rule); end
+
+  def accept_verbatim(verbatim); end
+
+  def attributes(text); end
+
+  def end_accepting(); end
+
+  def handle_regexp_HARD_BREAK(target); end
+
+  def handle_regexp_SUPPRESSED_CROSSREF(target); end
+
+  def indent(); end
+
+  def indent=(indent); end
+
+  def init_tags(); end
+
+  def initialize(markup=T.unsafe(nil)); end
+
+  def list_index(); end
+
+  def list_type(); end
+
+  def list_width(); end
+
+  def prefix(); end
+
+  def res(); end
+
+  def start_accepting(); end
+
+  def use_prefix(); end
+
+  def width(); end
+
+  def width=(width); end
+
+  def wrap(text); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToRdoc
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToTableOfContents
+  def accept_blank_line(*node); end
+
+  def accept_block_quote(*node); end
+
+  def accept_heading(heading); end
+
+  def accept_list_end(*node); end
+
+  def accept_list_end_bullet(*node); end
+
+  def accept_list_item_end(*node); end
+
+  def accept_list_item_start(*node); end
+
+  def accept_list_start(*node); end
+
+  def accept_paragraph(*node); end
+
+  def accept_raw(*node); end
+
+  def accept_rule(*node); end
+
+  def accept_verbatim(*node); end
+
+  def end_accepting(); end
+
+  def initialize(); end
+
+  def omit_headings_below(); end
+
+  def omit_headings_below=(omit_headings_below); end
+
+  def res(); end
+
+  def start_accepting(); end
+
+  def suppressed?(heading); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToTableOfContents
+  def self.to_toc(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToTest
+  def accept_blank_line(blank_line); end
+
+  def accept_heading(heading); end
+
+  def accept_list_end(list); end
+
+  def accept_list_item_end(list_item); end
+
+  def accept_list_item_start(list_item); end
+
+  def accept_list_start(list); end
+
+  def accept_paragraph(paragraph); end
+
+  def accept_raw(raw); end
+
+  def accept_rule(rule); end
+
+  def accept_verbatim(verbatim); end
+
+  def end_accepting(); end
+
+  def start_accepting(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToTest
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToTtOnly
+  def accept_blank_line(markup_item); end
+
+  def accept_block_quote(block_quote); end
+
+  def accept_heading(markup_item); end
+
+  def accept_list_end(list); end
+
+  def accept_list_item_end(markup_item); end
+
+  def accept_list_item_start(list_item); end
+
+  def accept_list_start(list); end
+
+  def accept_paragraph(paragraph); end
+
+  def accept_raw(markup_item); end
+
+  def accept_rule(markup_item); end
+
+  def accept_verbatim(markup_item); end
+
+  def do_nothing(markup_item); end
+
+  def end_accepting(); end
+
+  def initialize(markup=T.unsafe(nil)); end
+
+  def list_type(); end
+
+  def res(); end
+
+  def start_accepting(); end
+
+  def tt_sections(text); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::ToTtOnly
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Verbatim
+  def format(); end
+
+  def format=(format); end
+
+  def normalize(); end
+
+  def ruby?(); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP::Verbatim
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup::MARKUP
+  def self.parse(str); end
+end
+
+class YARD::Templates::Helpers::Markup::RDocMarkup
+end
+
+module YARD::Templates::Helpers::MarkupHelper
+  def load_markup_provider(type=T.unsafe(nil)); end
+
+  def markup_class(type=T.unsafe(nil)); end
+
+  def markup_file_contents(contents); end
+
+  def markup_for_file(contents, filename); end
+
+  def markup_provider(type=T.unsafe(nil)); end
+  MARKUP_EXTENSIONS = ::T.let(nil, ::T.untyped)
+  MARKUP_FILE_SHEBANG = ::T.let(nil, ::T.untyped)
+  MARKUP_PROVIDERS = ::T.let(nil, ::T.untyped)
+end
+
+module YARD::Templates::Helpers::MarkupHelper
+  def self.clear_markup_cache(); end
+
+  def self.markup_cache(); end
+
+  def self.markup_cache=(markup_cache); end
+end
+
+module YARD::Templates::Helpers::MethodHelper
+  def format_args(object); end
+
+  def format_block(object); end
+
+  def format_code(object, _show_lines=T.unsafe(nil)); end
+
+  def format_constant(value); end
+
+  def format_lines(object); end
+
+  def format_return_types(object); end
+end
+
+module YARD::Templates::Helpers::MethodHelper
+end
+
+module YARD::Templates::Helpers::ModuleHelper
+  def prune_method_listing(list, hide_attributes=T.unsafe(nil)); end
+end
+
+module YARD::Templates::Helpers::ModuleHelper
+end
+
+module YARD::Templates::Helpers::TextHelper
+  def align_right(text, spacer=T.unsafe(nil), col=T.unsafe(nil)); end
+
+  def h(text); end
+
+  def hr(col=T.unsafe(nil), sep=T.unsafe(nil)); end
+
+  def indent(text, len=T.unsafe(nil)); end
+
+  def signature(meth); end
+
+  def title_align_right(text, col=T.unsafe(nil)); end
+
+  def wrap(text, col=T.unsafe(nil)); end
+end
+
+module YARD::Templates::Helpers::TextHelper
+end
+
+module YARD::Templates::Helpers::UMLHelper
+  def format_path(object); end
+
+  def h(text); end
+
+  def tidy(data); end
+
+  def uml_visibility(object); end
+end
+
+module YARD::Templates::Helpers::UMLHelper
+end
+
+class YARD::Templates::Section
+  def <<(*args); end
+
+  def ==(other); end
+
+  def [](*args); end
+
+  def any(item); end
+
+  def eql?(other); end
+
+  def initialize(name, *args); end
+
+  def name(); end
+
+  def name=(name); end
+
+  def place(*args); end
+
+  def push(*args); end
+
+  def unshift(*args); end
+end
+
+class YARD::Templates::Section
+end
+
+module YARD::Templates::Template
+  include ::YARD::Templates::ErbCache
+  include ::YARD::Templates::Helpers::BaseHelper
+  include ::YARD::Templates::Helpers::MethodHelper
+  def T(*path); end
+
+  def class(); end
+
+  def class=(arg); end
+
+  def erb(section, &block); end
+
+  def erb_file_for(section); end
+
+  def erb_with(content, filename=T.unsafe(nil)); end
+
+  def file(basename, allow_inherited=T.unsafe(nil)); end
+
+  def init(); end
+
+  def initialize(opts=T.unsafe(nil)); end
+
+  def inspect(); end
+
+  def options(); end
+
+  def options=(value); end
+
+  def run(opts=T.unsafe(nil), sects=T.unsafe(nil), start_at=T.unsafe(nil), break_first=T.unsafe(nil), &block); end
+
+  def section(); end
+
+  def section=(section); end
+
+  def sections(*args); end
+
+  def superb(sect=T.unsafe(nil), &block); end
+
+  def yieldall(opts=T.unsafe(nil), &block); end
+end
+
+module YARD::Templates::Template::ClassMethods
+  def S(*args); end
+
+  def T(*path); end
+
+  def find_file(basename); end
+
+  def find_nth_file(basename, index=T.unsafe(nil)); end
+
+  def full_path(); end
+
+  def full_path=(full_path); end
+
+  def full_paths(); end
+
+  def initialize(path, full_paths); end
+
+  def is_a?(klass); end
+
+  def new(*args); end
+
+  def path(); end
+
+  def path=(path); end
+
+  def reset_full_paths(); end
+
+  def run(*args); end
+end
+
+module YARD::Templates::Template::ClassMethods
+end
+
+module YARD::Templates::Template
+  def self.extra_includes(); end
+
+  def self.extra_includes=(extra_includes); end
+
+  def self.include_extra(template, options); end
+
+  def self.included(klass); end
+end
+
+class YARD::Verifier
+  def add_expressions(*expressions); end
+
+  def call(object); end
+
+  def expressions(); end
+
+  def expressions=(value); end
+
+  def initialize(*expressions); end
+
+  def method_missing(sym, *args, &block); end
+
+  def o(); end
+
+  def object(); end
+
+  def run(list); end
+  NILCLASS_METHODS = ::T.let(nil, ::T.untyped)
+end
+
+class YARD::Verifier
+end
+
+module YARDSorbet
+  VERSION = ::T.let(nil, ::T.untyped)
+end
+
+module YARDSorbet::Directives
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class YARDSorbet::Handlers::AbstractDSLHandler
+  CLASS_TAG_TEXT = ::T.let(nil, ::T.untyped)
+  TAG_TEXT = ::T.let(nil, ::T.untyped)
+end
+
+class YARDSorbet::Handlers::AbstractDSLHandler
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class YARDSorbet::Handlers::EnumsHandler
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class YARDSorbet::Handlers::IncludeHandler
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class YARDSorbet::Handlers::MixesInClassMethodsHandler
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class YARDSorbet::Handlers::SigHandler
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module YARDSorbet::Handlers::StructClassHandler
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class YARDSorbet::Handlers::StructPropHandler
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module YARDSorbet::NodeUtils
+  SKIP_METHOD_CONTENTS = ::T.let(nil, ::T.untyped)
+end
+
+module YARDSorbet::NodeUtils
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module YARDSorbet::SigToYARD
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module YARDSorbet::TagUtils
+  extend ::T::Sig
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end

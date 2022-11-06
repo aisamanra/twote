@@ -8,7 +8,7 @@
      }
 
      .tweet {
-       border: 1px solid black;
+       background-color: #eee;
        padding: 2em;
        margin: 1em;
      }
@@ -22,12 +22,37 @@
        font-size: 14pt;
      }
 
+     .media:empty {
+       display: none;
+     }
+
      .media {
+       margin: 1em;
+       background-color: #fff;
+       display: flex;
+       justify-content: space-around;
+       border: 1px solid #000;
+     }
+
+     .media > * {
        padding: 1em;
      }
 
      [data-reply="true"] {
        display: none;
+     }
+
+     .darkroom {
+       background-color: rgba(0, 0, 0, 0.5);
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       z-index: 100;
+       display: grid;
+       justify-items: center;
+       align-items: center;
      }
     </style>
     <title>Twitter Archive</title>
@@ -37,14 +62,39 @@
       {{#tweets}}
         <article id="{{tweet_id}}" class="tweet" data-reply="{{reply}}">
           {{{text}}}
-          {{#media}}
-            <div class="media">
-              {{{embed}}}
-            </div>
-          {{/media}}
-          <div class="date"><a href="#{{tweet_id}}">&#x1f517; {{display_time}}</a></div>
+          <div class="media">{{#media}}{{{embed}}}{{/media}}</div>
+          <div class="date"><a href="{{original}}">original</a> &mdash; <a href="#{{tweet_id}}">&#x1f517; {{display_time}}</a></div>
         </article>
         {{/tweets}}
     </div>
+    <script>
+     const focusImage = (path) => {
+       // we're given the thumbnail path, so extract out the original image path
+       const original = path.replace("/thumb-", "/")
+       // create the darkroom elements on top of everything else
+       const darkroom = document.createElement("div")
+       darkroom.className = "darkroom"
+       document.querySelector("body").append(darkroom);
+       // and add the image to the darkroom
+       const img = document.createElement("img");
+       img.src = original;
+       darkroom.append(img);
+       // any click anywhere should make this go away
+       darkroom.onclick = () => {
+         img.remove()
+         darkroom.remove()
+         window.onclick = () => null;
+       }
+     }
+
+     window.onload = () => {
+       const images = document.querySelectorAll("img")
+       for (const i of images) {
+         i.onclick = (event) => {
+           focusImage(i.src)
+         }
+       }
+     }
+    </script>
   </body>
 </html>
