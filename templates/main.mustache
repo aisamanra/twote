@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+     body {
+       font-family: "Fira Sans", "Arial", "Helvetica", sans-serif;
+       font-size: 16pt;
+     }
+
+     .tweet {
+       border: 1px solid black;
+       padding: 2em;
+       margin: 1em;
+     }
+
+     .hashtag {
+       color: #369;
+     }
+
+     .date {
+       text-align: right;
+       font-size: 14pt;
+     }
+
+     .media {
+       padding: 1em;
+     }
+
+     [data-reply="true"] {
+       display: none;
+     }
+    </style>
+    <title>Twitter Archive</title>
+  </head>
+  <body>
+    <div class="tweets">
+      {{#tweets}}
+        <article id="{{tweet_id}}" class="tweet" data-reply="{{reply}}">
+          {{{text}}}
+          {{#media}}
+            <div class="media">
+              {{{embed}}}
+            </div>
+          {{/media}}
+          <div class="date"><a href="#{{tweet_id}}">&#x1f517; {{display_time}}</a></div>
+        </article>
+        {{/tweets}}
+    </div>
+  </body>
+</html>
