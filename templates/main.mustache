@@ -32,11 +32,12 @@
        background-color: #fff;
        display: flex;
        justify-content: space-around;
-       border: 1px solid #000;
+       border: 2px solid #999;
      }
 
      .media > * {
-       padding: 1em;
+       border: 2px solid #000;
+       margin: 1em 0em;
      }
 
      [data-reply="true"] {
@@ -55,10 +56,28 @@
        justify-items: center;
        align-items: center;
      }
+
+     .darkroom img {
+       max-width: 90%;
+       max-height: 90%;
+       width: auto;
+       height: auto;
+       border: 2px solid #000;
+     }
+
+     h1 {
+       text-align: center;
+     }
+
+     p {
+       padding: 2em;
+     }
     </style>
-    <title>Twitter Archive</title>
+    <title>@{{username}} tweet archive</title>
   </head>
+
   <body>
+    <h1><a href="https://twitter.com/aisamanra">@{{username}}</a> tweet archive</h1>
     <div class="tweets">
       {{#tweets}}
         <article id="{{tweet_id}}" class="tweet" data-reply="{{reply}}">
@@ -68,6 +87,8 @@
         </article>
         {{/tweets}}
     </div>
+    <footer><a href="https://github.com/aisamanra/twote">Created by Twote</a></footer>
+
     <script>
      const focusImage = (path) => {
        // we're given the thumbnail path, so extract out the original image path

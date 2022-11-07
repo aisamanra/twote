@@ -102,7 +102,7 @@ class Twote
 
   sig { params(message: String).void }
   def debug(message)
-    stamp = Time.now.strftime("%H:%m:%S")
+    stamp = Time.now.strftime("%H:%M:%S")
     $stderr.puts("\x1b[36m[#{stamp}] #{message}\x1b[39m")
   end
 
@@ -143,7 +143,7 @@ class Twote
     target = output / "index.html"
     debug("Writing to #{target}")
     File.open(target, "w") do |index|
-      index.write(Mustache.render(template, {tweets: tweets}))
+      index.write(Mustache.render(template, {tweets: tweets, username: username}))
     end
 
     if opts.convert_media
