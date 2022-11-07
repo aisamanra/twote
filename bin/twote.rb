@@ -15,7 +15,7 @@ class Module
   extend T::Sig
 end
 
-module Twote
+class Twote
   class Options < Sprinkles::Opts::GetOpt
     sig { override.returns(String) }
     def self.program_name
@@ -73,12 +73,42 @@ module Twote
     end
   end
 
-  sig { void }
-  def self.main
-    opts = Options.parse
-    root = Pathname.new(opts.root_path)
-    output = Pathname.new(opts.destination)
+  sig { returns(Pathname) }
+  attr_reader :root
 
+  sig { returns(Pathname) }
+  attr_reader :output
+
+  sig { returns(String) }
+  attr_reader :username
+
+  sig { returns(Options) }
+  attr_reader :opts
+
+  sig { void }
+  def initialize
+    @opts = T.let(Options.parse, Options)
+    @root = T.let(Pathname.new(opts.root_path), Pathname)
+    @output = T.let(Pathname.new(opts.destination), Pathname)
+
+    @username = T.let(
+      File.open(@root / "account.js") do |f|
+        raw = T.must(f.read).gsub("window.YTD.account.part0 = ", "")
+        JSON.load(raw).dig(0, "account", "username")
+      end,
+      String
+    )
+  end
+
+  sig { params(message: String).void }
+  def debug(message)
+    stamp = Time.now.strftime("%H:%m:%S")
+    $stderr.puts("\x1b[36m[#{stamp}] #{message}\x1b[39m")
+  end
+
+  sig { void }
+  def main
+    debug("Creating static archive for #{username}")
     template = File.read("templates/main.mustache")
 
     data = File.open(root / "tweets.js") do |f|
@@ -93,7 +123,7 @@ module Twote
         # skip retweets
         next if t.dig("tweet", "full_text")&.start_with?("RT ")
         # convert to the format we're gonna throw at Mustache
-        tweet_data(root, t)
+        tweet_data(t)
       end
       .compact
       .sort_by(&:time)
@@ -111,7 +141,7 @@ module Twote
     # puts tweets
     FileUtils.mkdir_p(output)
     target = output / "index.html"
-    $stderr.puts("Writing to #{target}")
+    debug("Writing to #{target}")
     File.open(target, "w") do |index|
       index.write(Mustache.render(template, {tweets: tweets}))
     end
@@ -120,10 +150,16 @@ module Twote
       # for development purposes, we only do this on-demand (e.g. so
       # if you're mucking with the template then we don't churn
       # through all the thumbnails instead)
-      $stderr.puts("Moving and resizing media files")
+      debug("Moving and resizing media files")
 
       FileUtils.mkdir_p(output / "media")
-      Dir[root / "tweets_media" / "*"].each do |entry|
+      media = Dir[root / "tweets_media" / "*"]
+      total = media.size
+      media.each_with_index do |entry, i|
+        if i % 100 == 0
+          debug("Creating thumbnails: #{i}/#{total}")
+        end
+
         basename = File.basename(entry)
         FileUtils.cp(entry, output / "media" / basename)
         # this will fail for videos; that's fine
@@ -136,8 +172,8 @@ module Twote
     end
   end
 
-  sig { params(root: Pathname, tweet_id: String, variants: T::Array[T.untyped]).returns(T.nilable(Video)) }
-  def self.find_video(root, tweet_id, variants)
+  sig { params(tweet_id: String, variants: T::Array[T.untyped]).returns(T.nilable(Video)) }
+  def find_video(tweet_id, variants)
     # okay, so: Twitter gives a bunch of variants only one of which is
     # canonical and stored in the data archive. I'll bet there's a way
     # of figuring out based on bitrate and whatnot which one is, but I
@@ -160,8 +196,8 @@ module Twote
     return nil
   end
 
-  sig { params(root: Pathname, tweet: T.untyped).returns(T.nilable(Tweet)) }
-  def self.tweet_data(root, tweet)
+  sig { params(tweet: T.untyped).returns(T.nilable(Tweet)) }
+  def tweet_data(tweet)
     tweet = tweet["tweet"]
     tweet_id = tweet["id"]
 
@@ -220,7 +256,7 @@ module Twote
     media_objects = tweet.dig("extended_entities", "media")&.map do |m|
       if m["type"] == "video"
         # videos are special: see `find_video` for why
-        v = find_video(root, tweet_id, m.dig("video_info", "variants"))
+        v = find_video(tweet_id, m.dig("video_info", "variants"))
         return nil if v.nil?
         v
       else
@@ -239,11 +275,9 @@ module Twote
       text: tweet_text,
       time: Time.parse(tweet["created_at"]),
       media: media_objects,
-      original: "https://twitter.com/aisamanra/status/#{tweet_id}"
+      original: "https://twitter.com/#{username}/status/#{tweet_id}"
     )
   end
 end
 
-if File.expand_path($PROGRAM_NAME) == __FILE__
-  Twote.main
-end
+Twote.new.main if File.expand_path($PROGRAM_NAME) == __FILE__
